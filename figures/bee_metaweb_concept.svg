@@ -28,8 +28,8 @@
      inkscape:document-units="mm"
      showgrid="false"
      inkscape:zoom="0.6162003"
-     inkscape:cx="685.10817"
-     inkscape:cy="470.68474"
+     inkscape:cx="821.75346"
+     inkscape:cy="613.18357"
      inkscape:window-width="1920"
      inkscape:window-height="1043"
      inkscape:window-x="0"
@@ -441,11 +441,11 @@
          x="169.13512"
          y="87.23613">probability of occurrence</tspan></text>
     <rect
-       style="fill:#ffffff;stroke:#5089e2;stroke-width:0.716;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+       style="fill:none;stroke:#5089e2;stroke-width:0.716;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
        id="rect24038"
        width="32.590786"
        height="17.654797"
-       x="249.48439"
+       x="245.25104"
        y="-55.066986"
        ry="0.19475912" />
     <rect
@@ -453,23 +453,23 @@
        id="rect24040"
        width="32.700741"
        height="2.1388164"
-       x="249.37444"
+       x="245.14108"
        y="-55.066986"
        ry="0.023594379" />
     <rect
-       style="fill:none;stroke:#8762c3;stroke-width:0.716;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+       style="fill:none;stroke:#38927e;stroke-width:0.716;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
        id="rect27522"
        width="32.590786"
        height="17.654797"
-       x="170.10931"
+       x="196.03851"
        y="-55.066986"
        ry="0.19475912" />
     <rect
-       style="fill:#8762c3;fill-opacity:1;stroke:none;stroke-width:0.0405412;stroke-miterlimit:4;stroke-dasharray:none;paint-order:stroke fill markers"
+       style="fill:#38927e;fill-opacity:1;stroke:none;stroke-width:0.0405412;stroke-miterlimit:4;stroke-dasharray:none;paint-order:stroke fill markers"
        id="rect27524"
        width="32.700741"
        height="2.1388164"
-       x="169.99936"
+       x="195.92856"
        y="-55.066986"
        ry="0.023594379" />
     <text
@@ -47953,5 +47953,37 @@ SUVORK5CYII=
          style="font-size:7.05556px;fill:#b3b3b3;stroke-width:0.264583"
          x="114.88811"
          y="202.24603">–</tspan></text>
+    <rect
+       style="fill:none;stroke:#8762c3;stroke-width:0.716;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+       id="rect159314"
+       width="32.590786"
+       height="17.654797"
+       x="159.52597"
+       y="-55.066986"
+       ry="0.19475912" />
+    <rect
+       style="fill:#8762c3;fill-opacity:1;stroke:none;stroke-width:0.0405412;stroke-miterlimit:4;stroke-dasharray:none;paint-order:stroke fill markers"
+       id="rect159316"
+       width="32.700741"
+       height="2.1388164"
+       x="159.41602"
+       y="-55.066986"
+       ry="0.023594379" />
+    <rect
+       style="fill:none;fill-opacity:1;stroke:#38927e;stroke-width:0.716;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+       id="rect159318"
+       width="32.590786"
+       height="17.654797"
+       x="284.93848"
+       y="-55.066986"
+       ry="0.19475912" />
+    <rect
+       style="fill:#38927e;fill-opacity:1;stroke:#8762c3;stroke-width:0.0405412;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+       id="rect159320"
+       width="32.700741"
+       height="2.1388164"
+       x="284.82852"
+       y="-55.066986"
+       ry="0.023594379" />
   </g>
 </svg>
