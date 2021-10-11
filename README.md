@@ -36,6 +36,8 @@ interactions for which both species appear in field data.
 
 # Methods
 
+![todo](./figures/concept.png){#fig:concept}
+
 ## A predictive model to make spatially explicit network prediction
 
 The goal is two have two predictive models: interaction-predictor model and a
@@ -93,5 +95,9 @@ overlap from spatial component.
 
 
 # Discussion
+
+
+## Acknowledgements
+
 
 # References
