@@ -38,11 +38,12 @@ RMBL_interactions[!, "day_of_year"]
 
 # okay 
 # pull gbif occurences for each sp.
-using SimpleSDMLayers, GBIF, Plots
+using SimpleSDMLayers, GBIF, Plots, Measures
 
-bounds = (left=-109.6, right=-102.4, top=40.995, bottom=37.01 )
 
-specieslist = ["Bombus appositus", "Bombus auricomus",
+speciesstrs =
+["Bombus appositus", 
+"Bombus auricomus",
 "Bombus balteatus",
 "Bombus bifarius",
 "Bombus californicus",
@@ -66,57 +67,57 @@ specieslist = ["Bombus appositus", "Bombus auricomus",
 "Bombus sylvicola",
 "Bombus variabilis"]
 
-observations = occurrences(
-    GBIF.taxon(specieslist[3]; strict=true),
-    "hasCoordinate" => "true",
-    "country" => "US",
-    "decimalLatitude" => (bounds.bottom, bounds.top),
-    "decimalLongitude" => (bounds.left, bounds.right),
-    "limit" => 10000,
-)
+specieslist = GBIF.taxon.(speciesstrs)
 
-while length(observations) < size(observations)
-    occurrences!(observations)
+function getplot(s)
+    bounds = (left=-109.6, right=-102.4, top=40.995, bottom=37.01 )
+
+    observations = occurrences(
+        s, 
+        "hasCoordinate" => "true",
+        "country" => "US",
+        "decimalLatitude" => (bounds.bottom, bounds.top),
+        "decimalLongitude" => (bounds.left, bounds.right),
+        "limit" => 10000
+    )
+
+    size(observations) <= 0 && return
+
+    while length(observations) < size(observations)
+        occurrences!(observations)
+    end
+
+    elev = convert(Float32, SimpleSDMPredictor(WorldClim, Elevation;  bounds...))
+
+    path = joinpath("rawdata", "colorado_counties","Colorado_County_Boundaries.shp")
+    table = Shapefile.Table(path)
+    geoms = Shapefile.shapes(table)
+
+
+    plot(frame=:none, tickfont=4, xlim=(-109, -102), ylim=(37,41), size=(300,300))
+    plot!(elev, c=:Blues_9, colorbar=:none)
+    plot!(geoms, lc=:white, fa=0, lw=1)
+    scatter!(
+        longitudes(observations),
+        latitudes(observations);
+        lab="",
+        c=:white,
+        msc=:orange,
+        ms=3,
+        alpha=0.5,
+    )
+    title!(s.name)
 end
 
-temperature, precipitation = SimpleSDMPredictor(CHELSA,BioClim, [1, 12]; bounds...)
-
-presabs = mask(temperature, observations, Float32)
 
 
-path = joinpath("rawdata", "colorado_counties","Colorado_County_Boundaries.shp")
-table = Shapefile.Table(path)
-geoms = Shapefile.shapes(table)
+plts = []
+
+for s in specieslist
+    push!(plts, getplot(s))
+end
 
 
-plot(frame=:box, tickfont=4, xlim=(-109, -102), ylim=(37,41))
-plot!(elev, c=:imola)
-plot!(geoms, lc=:white, fa=0, lw=0.8, la=0.8)
-scatter!(
-    longitudes(observations),
-    latitudes(observations);
-    lab="",
-    c=:white,
-    msc=:orange,
-    ms=3,
-    alpha=0.5,
-)
+plot(plts..., size=(2000,2000))
 
-
-predictors =
-    convert.(
-        Float32, SimpleSDMPredictor(WorldClim, BioClim, 1:19; resolution=10.0, bounds...)
-    );
-
-push!(
-    predictors,
-    convert(
-        Float32, SimpleSDMPredictor(WorldClim, Elevation; resolution=10.0, bounds...)
-    ),
-);
-
-plot(plot.(predictors, grid=:none, axes=false, frame=:none, leg=false, c=:imola)...)
-
-elev = convert(Float32, SimpleSDMPredictor(WorldClim, Elevation;  bounds...))
-
-
+savefig("occurrence_and_elevation.png")
