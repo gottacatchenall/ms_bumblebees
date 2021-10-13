@@ -38,6 +38,14 @@ interactions for which both species appear in field data.
 
 ![todo](./figures/concept.png){#fig:concept}
 
+Where $X_{ij}$ is and $L_{abc}$ is .
+
+as in gravel et al 2017
+$$P(X_{iy}, X_{jy}, L_{ijy} | E_y) = P(X_{iy},X_{jy}P(L_{ijy} | X_{iy}, X_{jy}, E_y)$$
+
+Then decompose probaility of co-occurence as
+$$P(X_{iy}, X_{jy}) = P(X_{iy})P(X_{jy})$$
+
 ## A predictive model to make spatially explicit network prediction
 
 The goal is two have two predictive models: interaction-predictor model and a
