@@ -3,18 +3,20 @@ using CSV, DataFrames
 
 bees = CSV.read(joinpath("cleandata", "beenames.csv"), DataFrame) # bees?
 
-targetfile = "genbank_bee_query.txt"
-
+plants = CSV.read(joinpath("cleandata", "plantnames.csv"), DataFrame)
 # format is 
 # "Bombus appositus"[Organism] OR "Bombus auricomus"[Organism] OR ... etc.
 
+function makequery(species)
+    query = "$(species[begin])[Organism] OR "
 
-query = "$(bees.species[begin])[Organism] OR "
+    for s in species[2:end-1]
+        query = string(query, "$s [Organism] OR ")
+    end
 
-for s in bees.species[2:end-1]
-    query = string(query, "$s [Organism] OR ")
+    query = string(query, "$(species[end])[Organism]")
 end
 
-query = string(query, "$(bees.species[end])[Organism]")
 
 
+makequery(plants.species)

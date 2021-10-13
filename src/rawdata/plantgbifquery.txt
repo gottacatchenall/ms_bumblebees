@@ -1,0 +1,113 @@
+rbCL AND Astragalus bisulcatus[Organism] OR Astragalus laxmannii robustior
+[Organism] OR Carduus nutans [Organism] OR Cirsium arvense [Organism] OR Cirsium
+canescens [Organism] OR Cleome [Organism] OR Delphinium barbeyi [Organism] OR
+Astragalus [Organism] OR Barbarea [Organism] OR Bromus [Organism] OR Castilleja
+[Organism] OR Chrysothamnus [Organism] OR Potentilla fruticosa [Organism] OR
+Delphinium nuttallianum [Organism] OR Delphinium ramosum [Organism] OR
+Delphinium [Organism] OR Grindelia squarrosa [Organism] OR Liatris punctata
+[Organism] OR Linaria dalmatica [Organism] OR Linaria vulgaris [Organism] OR
+Monarda fistulosa menthifolia [Organism] OR Onosmodium bejariense occidentale
+[Organism] OR Oxytropis lambertii [Organism] OR Oxytropis [Organism] OR Papaver
+nudicaule americanum [Organism] OR Pedicularis bracteosa paysoniana [Organism]
+OR Penstemon degeneri [Organism] OR Penstemon griffinii [Organism] OR Penstemon
+secundiflorus [Organism] OR Penstemon [Organism] OR Prunus [Organism] OR
+Taraxacum [Organism] OR Thermopsis rhombifolia montana [Organism] OR Thermopsis
+[Organism] OR Trifolium nanum [Organism] OR Vicia [Organism] OR Helianthus
+annuus [Organism] OR Ribes [Organism] OR Symphoricarpos occidentalis [Organism]
+OR Achillea millefolium [Organism] OR Aconitum columbianum [Organism] OR
+Aconitum [Organism] OR Arnica mollis [Organism] OR Castilleja occidentalis
+[Organism] OR Castilleja rhexifolia [Organism] OR Castilleja sulphurea
+[Organism] OR Cirsium scariosum [Organism] OR Cirsium scopulorum [Organism] OR
+Cirsium [Organism] OR Erysimum [Organism] OR Gentiana [Organism] OR Gutierrezia
+[Organism] OR Muscari [Organism] OR Orthocarpus [Organism] OR Penstemon
+whippleanus [Organism] OR Phlox [Organism] OR Primula parryi [Organism] OR Rubus
+[Organism] OR Salix reticulata nana [Organism] OR Sedum lanceolatum [Organism]
+OR Sedum [Organism] OR Solidago [Organism] OR Aster [Organism] OR Astragalus
+drummondii [Organism] OR Besseya plantaginea [Organism] OR Centaurea [Organism]
+OR Chamerion angustifolium [Organism] OR Claytonia megarhiza [Organism] OR
+Ericameria nauseosa [Organism] OR Erigeron [Organism] OR Eriogonum [Organism] OR
+Eriogonum umbellatum [Organism] OR Frasera [Organism] OR Geranium caespitosum
+[Organism] OR Geranium richardsonii [Organism] OR Geranium [Organism] OR
+Grindelia [Organism] OR Helianthella quinquenervis [Organism] OR Hydrophyllum
+[Organism] OR Linum lewisii [Organism] OR Lupinus argenteus [Organism] OR
+Machaeranthera [Organism] OR Melilotus albus [Organism] OR Melilotus officinalis
+[Organism] OR Melilotus [Organism] OR Mentzelia speciosa [Organism] OR Ribes
+aureum [Organism] OR Rubus deliciosus [Organism] OR Rudbeckia laciniata ampla
+[Organism] OR Senecio [Organism] OR Trifolium repens [Organism] OR Wyethia
+amplexicaulis [Organism] OR Aster [Organism] OR Iris missouriensis [Organism] OR
+Lupinus [Organism] OR Oxytropis sericea sericea [Organism] OR Penstemon
+[Organism] OR Phacelia [Organism] OR Allium [Organism] OR Ceanothus [Organism]
+OR Cleome [Organism] OR Dalea [Organism] OR Helianthella [Organism] OR
+Helianthus [Organism] OR Lotus corniculatus [Organism] OR Lupinus [Organism] OR
+Nepeta cataria [Organism] OR Onopordum acanthium [Organism] OR Phacelia
+heterophylla [Organism] OR Populus [Organism] OR Ratibida [Organism] OR Ribes
+leptanthum [Organism] OR Rosa acicularis [Organism] OR Rosa acicularis sayi
+[Organism] OR Rosa [Organism] OR Symphoricarpos [Organism] OR Erigeron
+melanocephalus [Organism] OR Taraxacum officinale [Organism] OR Artemisia
+[Organism] OR Asclepias [Organism] OR Astragalus pectinatus [Organism] OR
+Astragalus [Organism] OR Cirsium ochrocentrum [Organism] OR Cirsium undulatum
+[Organism] OR Corydalis [Organism] OR Cylindropuntia imbricata imbricata
+[Organism] OR Dalea candida [Organism] OR Dipsacus fullonum [Organism] OR
+Ericameria nauseosa [Organism] 
+
+
+
+
+rbCL AND Eriogonum effusum [Organism] OR Glycyrrhiza
+lepidota [Organism] OR Glycyrrhiza [Organism] OR Helianthus petiolaris
+[Organism] OR Hypericum [Organism] OR Lathyrus [Organism] OR Lithospermum
+[Organism] OR Lupinus sericeus sericeus [Organism] OR Medicago sativa [Organism]
+OR Medicago [Organism] OR Mentzelia nuda [Organism] OR Potentilla [Organism] OR
+Psoralidium tenuiflorum [Organism] OR Ratibida columnifera [Organism] OR Ribes
+[Organism] OR Salvia [Organism] OR Scutellaria brittonii [Organism] OR Senecio
+spartioides [Organism] OR Solanum rostratum [Organism] OR Aquilegia [Organism]
+OR Arnica [Organism] OR Epilobium [Organism] OR Lathyrus lanszwertii leucanthus
+[Organism] OR Mertensia ciliata [Organism] OR Penstemon glaber [Organism] OR
+Penstemon virens [Organism] OR Rhodiola rhodantha [Organism] OR Saussurea weberi
+[Organism] OR Asclepias speciosa [Organism] OR Astragalus sericoleucus
+[Organism] OR Echinacea purpurea [Organism] OR Solidago rigida humilis
+[Organism] OR Prunus virginiana melanocarpa [Organism] OR Rosa arkansana
+[Organism] OR Solanum [Organism] OR Campanula rotundifolia [Organism] OR
+Cardamine [Organism] OR Dryas octopetala hookeriana [Organism] OR Rhodiola
+integrifolia [Organism] OR Senecio triangularis [Organism] OR Asclepias
+viridiflora [Organism] OR Kochia scoparia [Organism] OR Cichorium intybus
+[Organism] OR Mentzelia chrysantha [Organism] OR Prunus pensylvanica [Organism]
+OR Securigera varia [Organism] OR Verbesina [Organism] OR Allium cernuum
+[Organism] OR Allium schoenoprasum [Organism] OR Arnica fulgens [Organism] OR
+Aster [Organism] OR Berberis fremontii [Organism] OR Berberis [Organism] OR
+Chrysothamnus greenei [Organism] OR Cirsium vulgare [Organism] OR Oreocarya
+virgata [Organism] OR Fendlera [Organism] OR Helianthus pumilus [Organism] OR
+Liatris [Organism] OR Lotus [Organism] OR Malus pumila [Organism] OR Malus
+[Organism] OR Mentzelia densa [Organism] OR Nepeta racemosa [Organism] OR
+Penstemon virgatus asa-grayi [Organism] OR Physaria alpina [Organism] OR
+Physaria vitulifera [Organism] OR Prunus americana [Organism] OR Ribes cereum
+[Organism] OR Solidago nana [Organism] OR Sophora nuttalliana [Organism] OR
+Stanleya pinnata [Organism] OR Verbascum thapsus [Organism] OR Verbesina
+encelioides exauriculata [Organism] OR Erysimum capitatum [Organism] OR Frasera
+speciosa [Organism] 
+
+
+rbCL AND Potentilla pulcherrima [Organism] OR Potentilla
+glaucophylla glaucophylla [Organism] OR Eremogone fendleri [Organism] OR
+Dasiphora [Organism] OR Lloydia serotina [Organism] OR Mertensia alpina
+[Organism] OR Pedicularis parryi [Organism] OR Senecio fremontii blitoides
+[Organism] OR Trifolium dasyphyllum [Organism] OR Heuchera bracteata [Organism]
+OR Amelanchier [Organism] OR Asclepias subverticillata [Organism] OR Aster
+[Organism] OR Cirsium wheeleri [Organism] OR Tamarix [Organism] OR Daucus carota
+[Organism] OR Euphorbia marginata [Organism] OR Gypsophila [Organism] OR
+Onosmodium [Organism] OR Heracleum [Organism] OR Pedicularis racemosa alba
+[Organism] OR Penstemon debilis [Organism] OR Potentilla fissa [Organism] OR
+Rubus parviflorus parviflorus [Organism] OR Rudbeckia [Organism] OR Centaurea
+diffusa [Organism] OR Hibiscus cannabinus [Organism] OR Lobelia siphilitica
+ludoviciana [Organism] OR Oenothera [Organism] OR Opuntia [Organism] OR Apocynum
+cannabinum [Organism] OR Cynoglossum officinale [Organism] OR Erigeron speciosus
+[Organism] OR Helianthus rigidus subrhomboideus [Organism] OR Heracleum maximum
+[Organism] OR Heterotheca villosa minor [Organism] OR Potentilla hippiana
+[Organism] OR Sidalcea neomexicana [Organism] OR Cosmos [Organism] OR Crataegus
+[Organism] OR Polemonium [Organism] OR Rudbeckia [Organism] OR Heliomeris
+multiflora [Organism] OR Mertensia lanceolata [Organism] OR Rudbeckia laciniata
+[Organism] OR Trifolium pratense [Organism] OR Arctostaphylos uva-ursi
+[Organism] OR Bistorta bistortoides [Organism] OR Gentiana parryi [Organism] OR
+Pedicularis groenlandica [Organism] OR Sagina saginoides [Organism] OR Salix
+petrophila [Organism] OR Salix planifolia [Organism] OR Senecio integerrimus
+[Organism] OR Tetraneuris acaulis [Organism] OR Vaccinium[Organism]
