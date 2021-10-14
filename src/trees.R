@@ -1,20 +1,25 @@
-library(ape)
-library(ips)
+
 library(phytools)
 
-setwd("/home/michael/papers/ms_bumblebees/src")
+setwd("/home/michael/papers/ms_bumblebees/src/")
 
-read.tree("cleandata/CONSENSUS.nex")
-tr = read.tree("cleandata/ee_consensus.tree")
+df = read.csv("rawdata/bumblebee_interactions.csv")
+names(df)
 
-plot(tr)
-nodelabels(tr$edge.length)
+beetree = read.nexus("bee_consensus.tree")
+planttree = read.nexus("clipped_consensus.tree")
+
+
+df =read.csv("tmpmetaweb.csv")
+
+df = df[!is.na(df$plant),]
 
 
 
-setwd("/home/michael/papers/ms_bumblebees/src")
 
-tr = ips::read("inprog_plants.nex")
+dev.new(width = 15, height=12)
 
-plot(tr)
-nodelabels(tr$edge.length)
+
+co = cophylo(planttree,beetree, rotate=FALSE)
+plot(co)
+
