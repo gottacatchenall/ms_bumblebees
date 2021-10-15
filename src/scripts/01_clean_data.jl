@@ -23,7 +23,7 @@ for row in 1:nrow(GBIF_bee_flower_interactions)
    push!(df_to_write.plant, plant)
 end
 
-CSV.write( "tmpmetaweb.csv",df_to_write,)
+CSV.write( "tmpmetaweb.csv",df_to_write)
 
 """
     Get the names of plant species from GBIF metaweb and write them 
@@ -48,31 +48,3 @@ gbifbees = GBIF.taxon.(bee_species_names)
 filter!(!isnothing, gbifbees)
 beenames = DataFrame(species=[p.name for p in gbifbees])
 CSV.write(joinpath("cleandata", "beenames.csv"), beenames)
-
-
-
-
-
-
-ElkMeadowsInteractions = CSV.read(joinpath("rawdata", "ElkMeadowsBombus.csv"), DataFrame)
-
-names(ElkMeadowsInteractions)
-ElkMeadowsInteractions[!, "Ordinal day"]
-ElkMeadowsInteractions[!, "Plot"]
-ElkMeadowsInteractions[!, "Insect species name"]
-ElkMeadowsInteractions[!, "Plant species name"]
-
-
-RMBL_phenology = CSV.read(joinpath("rawdata", "caradonna_rmbl_flowering_phenology_data_EDI.csv"), DataFrame)
-names(RMBL_phenology)
-RMBL_phenology[!, "plant"]
-
-
-RMBL_interactions = CSV.read(joinpath("rawdata", "caradonna_rmbl_interaction_networks_data_EDI.csv"), DataFrame)
-names(RMBL_interactions)
-RMBL_interactions[!, "plant"]
-RMBL_interactions[!, "pollinator"]
-RMBL_interactions[!, "interactions"]
-RMBL_interactions[!, "site"]
-RMBL_interactions[!, "year"]
-RMBL_interactions[!, "day_of_year"]

@@ -36,7 +36,7 @@ interactions for which both species appear in field data.
 
 # Methods
 
-![todo](./figures/concept.png){#fig:concept}
+![todo](./figures/concept_v2.png){#fig:concept}
 
 Where $X_{ij}$ is and $L_{abc}$ is .
 

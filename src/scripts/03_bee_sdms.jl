@@ -1,4 +1,10 @@
+using DataFrames
+using DataFramesMeta
+using CSV
+using Shapefile
 
+
+using SimpleSDMLayers, GBIF, Plots
 
 
 speciesstrs =
@@ -53,15 +59,15 @@ function getplot(s)
     geoms = Shapefile.shapes(table)
 
 
-    plot(frame=:none, tickfont=4, xlim=(-109, -102), ylim=(37,41), size=(300,300))
-    plot!(elev, c=:Blues_9, colorbar=:none)
+    plot(frame=:none, tickfont=4, xlim=(-109, -102), ylim=(37,41), size=(500,500))
+    plot!(elev, c=:Greens_9, colorbar=:none)
     plot!(geoms, lc=:white, fa=0, lw=1)
     scatter!(
         longitudes(observations),
         latitudes(observations);
         lab="",
         c=:white,
-        msc=:orange,
+        msc=:dodgerblue,
         ms=3,
         alpha=0.5,
     )
@@ -69,6 +75,7 @@ function getplot(s)
 end
 
 
+bounds = (left=-109.6, right=-102.4, top=40.995, bottom=37.01 )
 
 plts = []
 
@@ -77,6 +84,8 @@ for s in specieslist
 end
 
 
+getplot(specieslist[1])
+
 plot(plts..., size=(2000,2000))
 
-savefig("occurrence_and_elevation.png")
+savefig("singleocc.png")
