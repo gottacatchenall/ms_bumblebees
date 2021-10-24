@@ -1,49 +1,56 @@
 
+_title ideas_:
+Forecasting the spatio-temporal uncoupling of bumblebee-flower interaction
+networks
+
 # Introduction
 
-This document is for brainstorming the Colorado bumblebee metaweb prediction
-project.
+Species interactions and climate change.
 
-# 1 Data
+Two dimensions: spatial and temporal.
 
-The data consists of two parts, the field data collected at three stations
-across Colorado, and the GBIF metaweb data aggregated and cleaned by Julian R.
-and a student.
+1) Elevation gradients.
+- dispersal capacity and range shifts
 
-## 1.1 Field data
-
-This data consists of nearly-daily records of visits between bee and flower
-species for the months August-October. Data is collected from three field sites:
-1) Rocky Mountain Biological Lab (RMBL)
-2) Niwot Ridge
-3) Pikes Peak
-
-each with tens of plots each across an elevational gradient, collected for 7/4/3
-summers total.
-
-_To be determined_: specific number of plots per site and years per site
-
-## 1.2 GBIF metaweb
-
-This data of a network of bee/flower species which have a record of both
-occurring on GBIF for locations at some spatial grain
-
-_To be determined_: how does the scale of spatial aggregation affect properties of
-metaweb, how much taxonomic overlap is there with field data?---We have a lot of
-field data on interactions, but we can’t validate predictions on taxa that
-aren’t present in field data. As a result validation can only be done on
-interactions for which both species appear in field data.
+2) Phenological uncoupling [cite].
+- Abundance is a function of time in the year
 
 # Methods
 
+## Data
+
+
+## Models
+
+We denote the predicted probability of two species, $i$ and $j$,
+interacting a $p_{ij}$.
+The outcome is here is to build a model $f$, or rather a set of candidate
+models, that take $i$ and $j$ and inputs, and which potentially combine
+this with .features
+
+$$p_{ij} = f(i,j)$$
+
+
+### Candidate models
+
+***True Neutral***: $f(i,j) = \frac{1}{\sum_i \sum_j 1} = 1 / (P\cdot F)$
+
+***Relative-abundance (interaction neutral)***: $f(i,j) = A_i A_j$
+where $A_x$ is the relative abundance of species $x$.
+
+***Relative-abundance + environment-embedding***: $f(i,j) = g(i,j, E_i, E_j)$
+
+***Relative-abundance + phylogeny-embedding***: $$
+
+***Relative-abundance + environment-embedding + phylogeny-embedding***
+
+
+
 ![todo](./figures/concept_v2.png){#fig:concept}
 
-Where $X_{ij}$ is and $L_{abc}$ is .
-
-as in gravel et al 2017
+In gravel et al 2017
 $$P(X_{iy}, X_{jy}, L_{ijy} | E_y) = P(X_{iy},X_{jy}P(L_{ijy} | X_{iy}, X_{jy}, E_y)$$
-
-Then decompose probaility of co-occurence as
+Then decompose probability of co-occurence as
 $$P(X_{iy}, X_{jy}) = P(X_{iy})P(X_{jy})$$
 
 ## A predictive model to make spatially explicit network prediction
