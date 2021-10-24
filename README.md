@@ -79,7 +79,7 @@ GenBank.
 ## A spatiotemporally explicit predictive metaweb model
 
 What does it mean for it to be "spatiotemporally explicit?".
-Well the formal definition of a metaweb is total species pool and 
+Well the formal definition of a metaweb is total species pool and
 
 We denote the predicted probability of two species, $i$ and $j$,
 interacting a $p_{ij}$. The outcome is here is to build a model $f$,
@@ -102,40 +102,21 @@ where $A_x$ is the relative abundance of species $x$.
 
 ***Relative-abundance + environment-embedding + phylogeny-embedding***
 
-
-
 In gravel et al 2017
 $$P(X_{iy}, X_{jy}, L_{ijy} | E_y) = P(X_{iy},X_{jy}P(L_{ijy} | X_{iy}, X_{jy}, E_y)$$
 Then decompose probability of co-occurence as
 $$P(X_{iy}, X_{jy}) = P(X_{iy})P(X_{jy})$$
 
-## A predictive model to make spatially explicit network prediction
+## Model fitting and validation
 
-The goal is two have two predictive models: interaction-predictor model and a
-distribution-predictor model (a la Strydom & Catchen et al. 2021, figure 2).
+Models are implemented and fitted in Julia v1.6, using Turing.jl [cite]
 
-The interaction-predictor model, $f_i(s_i,s_j, \theta_i)$ predicts interaction based on
-species-level features $(s_i, s_j)$, and is trained on the field-data.
+### Training-test-validation split scheme
 
-These features could include Phylogeny (to be determined: how available are
-genomes or trees for these species) Environment/Climate Traits (to be
-determined: what trait data is available, how annoying is it to clean) Time
-(only for the phenology model, see 3.2 and 3.3)
+How do this? Do we remove sites entirely? Years entirely?
+Perhaps pikes peak would be best as a validation set as its only one
+year anyway and is a larger elevation gradient.
 
-The distribution-predictor model, $f_s(s_i, \vec{x}, t)$ is trained on GBIF data to
-predict the occurrence of species with features si at a location in space x, and
-time t. Many options here. Here the species level features could be  Climatic
-variables derived from remote sensing products. Co-occurence to make a JSDM
-Potentially weighted by phenology information from field data.  Time (only for
-the phenology model, see 3.2 and 3.3)
-
-## Combining distribution-predictor and interaction-predictor models
-
-Can split this into two based on how the distribution-predictor works. If $f_s$
-predicts co-occurrence, then draw the species pool first and predict
-interactions between the species in that pool. If $f_s$ is a single-species SDM,
-get the occurrence probability for each species p_s and compute the probability
-of observing interaction as function of the product of occ. prob.
 
 # Results
 
