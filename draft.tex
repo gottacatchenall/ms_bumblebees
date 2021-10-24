@@ -157,18 +157,59 @@ urlcolor=blue}
 \begin{document}
 \raggedright
 \thispagestyle{empty}
-{\Large\bfseries\sffamily Template to prepare preprints and manuscripts
-using markdown and github actions}
+{\Large\bfseries\sffamily Forecasting the spatio-temporal uncoupling of
+bumblebee-flower interaction networks}
 \vskip 5em
 
 %
 \href{https://orcid.org/0000-0002-6506-6487}{Michael D.\,Catchen}%
 %
-\,\textsuperscript{1,2}
+\,\textsuperscript{1,2}\quad %
+\href{https://orcid.org/0000-0001-9051-0597}{Francis\,Banville}%
+%
+\,\textsuperscript{3,4,2}\quad %
+Paul\,CaraDonna%
+%
+\,\textsuperscript{5,6,‡}\quad %
+\href{https://orcid.org/0000-0002-2151-6693}{Dominique\,Caron}%
+%
+\,\textsuperscript{1,2}\quad %
+\href{https://orcid.org/0000-0002-6248-3007}{Philippe\,Desjardins-Proulx}%
+%
+\,\textsuperscript{3,2}\quad %
+\href{https://orcid.org/0000-0001-9019-0108}{Norma R.\,Forero-Muñoz}%
+%
+\,\textsuperscript{3,2}\quad %
+\href{https://orcid.org/0000-0001-6075-8081}{Andrew\,Gonzalez}%
+%
+\,\textsuperscript{1,2}\quad %
+\href{https://orcid.org/0000-0002-4498-7076}{Dominique\,Gravel}%
+%
+\,\textsuperscript{4,2}\quad %
+Jane E.\,Ogilvie%
+%
+\,\textsuperscript{5,‡}\quad %
+\href{https://orcid.org/0000-0002-6004-4027}{Laura\,Pollock}%
+%
+\,\textsuperscript{1,2}\quad %
+\href{https://orcid.org/0000-0002-0735-5184}{Timothée\,Poisot}%
+%
+\,\textsuperscript{3,2,‡}\quad %
+\href{https://orcid.org/0000-0001-6067-1349}{Tanya\,Strydom}%
+%
+\,\textsuperscript{3,2,‡}\quad %
+Julian\,Resasco%
+%
+\,\textsuperscript{7,‡}
 
 \textsuperscript{1}\,McGill University\quad \textsuperscript{2}\,Québec
-Centre for Biodiversity Sciences
+Centre for Biodiversity Sciences\quad \textsuperscript{3}\,Université de
+Montréal\quad \textsuperscript{4}\,Université de
+Sherbrooke\quad \textsuperscript{5}\,Rocky Mountain Biological
+Laboratory\quad \textsuperscript{6}\,Chicago Bontanic
+Garden\quad \textsuperscript{7}\,University of Colorado Boulder
 
+\textsuperscript{‡}\,These authors contributed equally to the work\\
 
 \textbf{Correspondance to:}\\
 Michael D. Catchen --- \texttt{michael.catchen@mail.mcgill.ca}\\
@@ -198,48 +239,76 @@ scritpts. The markdown is handled with \texttt{pandoc}.\\%
 \linenumbers
 \pagestyle{normal}
 
+\emph{title ideas}: Forecasting the spatio-temporal uncoupling of
+bumblebee-flower interaction networks
+
 \hypertarget{introduction}{%
 \section{Introduction}\label{introduction}}
 
-This document is for brainstorming the Colorado bumblebee metaweb
-prediction project.
+Species interactions and climate change.
 
-\hypertarget{data}{%
-\section{1 Data}\label{data}}
+Two dimensions: spatial and temporal.
 
-The data consists of two parts, the field data collected at three
-stations across Colorado, and the GBIF metaweb data aggregated and
-cleaned by Julian R. and a student.
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\tightlist
+\item
+  Elevation gradients.
+\end{enumerate}
 
-\hypertarget{field-data}{%
-\subsection{1.1 Field data}\label{field-data}}
+\begin{itemize}
+\tightlist
+\item
+  dispersal capacity and range shifts
+\end{itemize}
 
-This data consists of nearly-daily records of visits between bee and
-flower species for the months August-October. Data is collected from
-three field sites: 1) Rocky Mountain Biological Lab (RMBL) 2) Niwot
-Ridge 3) Pikes Peak
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Phenological uncoupling {[}cite{]}.
+\end{enumerate}
 
-each with tens of plots each across an elevational gradient, collected
-for 7/4/3 summers total.
-
-\emph{To be determined}: specific number of plots per site and years per
-site
-
-\hypertarget{gbif-metaweb}{%
-\subsection{1.2 GBIF metaweb}\label{gbif-metaweb}}
-
-This data of a network of bee/flower species which have a record of both
-occurring on GBIF for locations at some spatial grain
-
-\emph{To be determined}: how does the scale of spatial aggregation
-affect properties of metaweb, how much taxonomic overlap is there with
-field data?---We have a lot of field data on interactions, but we can't
-validate predictions on taxa that aren't present in field data. As a
-result validation can only be done on interactions for which both
-species appear in field data.
+\begin{itemize}
+\tightlist
+\item
+  Abundance is a function of time in the year
+\end{itemize}
 
 \hypertarget{methods}{%
 \section{Methods}\label{methods}}
+
+\hypertarget{data}{%
+\subsection{Data}\label{data}}
+
+\hypertarget{models}{%
+\subsection{Models}\label{models}}
+
+We denote the predicted probability of two species, \(i\) and \(j\),
+interacting a \(p_{ij}\). The outcome is here is to build a model \(f\),
+or rather a set of candidate models, that take \(i\) and \(j\) and
+inputs, and which potentially combine this with .features
+
+\[p_{ij} = f(i,j)\]
+
+\hypertarget{candidate-models}{%
+\subsubsection{Candidate models}\label{candidate-models}}
+
+\textbf{\emph{True Neutral}}:
+\(f(i,j) = \frac{1}{\sum_i \sum_j 1} = 1 / (P\cdot F)\)
+
+\textbf{\emph{Relative-abundance (interaction neutral)}}:
+\(f(i,j) = A_i A_j\) where \(A_x\) is the relative abundance of species
+\(x\).
+
+\textbf{\emph{Relative-abundance + environment-embedding}}:
+\(f(i,j) = g(i,j, E_i, E_j)\)
+
+\textbf{\emph{Relative-abundance + phylogeny-embedding}}: \$\$
+
+\textbf{\emph{Relative-abundance + environment-embedding +
+phylogeny-embedding}}
 
 \begin{figure}
 \hypertarget{fig:concept}{%
@@ -249,12 +318,9 @@ species appear in field data.
 }
 \end{figure}
 
-Where \(X_{ij}\) is and \(L_{abc}\) is .
-
-as in gravel et al 2017
+In gravel et al 2017
 \[P(X_{iy}, X_{jy}, L_{ijy} | E_y) = P(X_{iy},X_{jy}P(L_{ijy} | X_{iy}, X_{jy}, E_y)\]
-
-Then decompose probaility of co-occurence as
+Then decompose probability of co-occurence as
 \[P(X_{iy}, X_{jy}) = P(X_{iy})P(X_{jy})\]
 
 \hypertarget{a-predictive-model-to-make-spatially-explicit-network-prediction}{%
