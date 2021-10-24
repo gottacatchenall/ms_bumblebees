@@ -1,5 +1,5 @@
 {
-  "title": "Template to prepare preprints and manuscripts using markdown and github actions",
+  "title": "Forecasting the spatio-temporal uncoupling of bumblebee-flower interaction networks",
   "authors": [
     {
       "affiliations": [
@@ -11,6 +11,130 @@
       "status": ["corresponding"],
       "email": "michael.catchen@mail.mcgill.ca",
       "orcid": "0000-0002-6506-6487"
+    },
+    {
+    "affiliations": [
+      "Université de Montréal",
+      "Université de Sherbrooke",
+      "Québec Centre for Biodiversity Sciences"
+    ],
+    "familyname": "Banville",
+    "givennames": "Francis",
+    "email": "francis.banville@umontreal.ca",
+    "orcid": "0000-0001-9051-0597"
+    },
+    {
+      "affiliations": [
+        "Rocky Mountain Biological Laboratory",
+        "Chicago Bontanic Garden"
+      ],
+      "familyname": "CaraDonna",
+      "givennames": "Paul",
+      "email": "",
+      "status": ["equal"],
+      "orcid": ""
+    },
+    {
+      "affiliations": [
+        "McGill University",
+        "Québec Centre for Biodiversity Sciences"
+      ],
+      "familyname": "Caron",
+      "givennames": "Dominique",
+      "email": "dominique.caron@mail.mcgill.ca",
+      "orcid": "0000-0002-2151-6693"
+    },
+    {
+      "affiliations": [
+        "Université de Montréal",
+        "Québec Centre for Biodiversity Sciences"
+      ],
+      "familyname": "Desjardins-Proulx",
+      "givennames": "Philippe",
+      "email": "philippe.desjardins.proulx@umontreal.ca",
+      "orcid": "0000-0002-6248-3007"
+    },
+    {
+      "affiliations": [
+        "Université de Montréal",
+        "Québec Centre for Biodiversity Sciences"
+      ],
+      "familyname": "Forero-Muñoz",
+      "givennames": "Norma R.",
+      "email": "norma.rocio.forero.munoz@umontreal.ca",
+      "orcid": "0000-0001-9019-0108"
+    },
+    {
+      "affiliations": [
+        "McGill University",
+        "Québec Centre for Biodiversity Sciences"
+      ],
+      "familyname": "Gonzalez",
+      "givennames": "Andrew",
+      "email": "andrew.gonzalez@mcgill.ca",
+      "orcid": "0000-0001-6075-8081"
+    },
+    {
+      "affiliations": [
+        "Université de Sherbrooke",
+        "Québec Centre for Biodiversity Sciences"
+       ],
+      "familyname": "Gravel",
+      "givennames": "Dominique",
+      "email": "dominique.gravel@usherbrooke.ca",
+      "orcid": "0000-0002-4498-7076"
+    },
+    {
+      "affiliations": [
+        "Rocky Mountain Biological Laboratory"
+      ],
+      "familyname": "Ogilvie",
+      "givennames": "Jane E.",
+      "email": "",
+      "status": ["equal"],
+      "orcid": ""
+    },
+    {
+      "affiliations": [
+        "McGill University",
+        "Québec Centre for Biodiversity Sciences"
+      ],
+      "familyname": "Pollock",
+      "givennames": "Laura",
+      "email": "laura.pollock@mcgill.ca",
+      "orcid": "0000-0002-6004-4027"
+    },
+    {
+      "affiliations": [
+        "Université de Montréal",
+        "Québec Centre for Biodiversity Sciences"
+      ],
+      "familyname": "Poisot",
+      "givennames": "Timothée",
+      "email": "timothee.poisot@umontreal.ca",
+      "status": ["equal"],
+      "orcid": "0000-0002-0735-5184"
+    },
+    {
+      "affiliations": [
+        "Université de Montréal",
+        "Québec Centre for Biodiversity Sciences"
+      ],
+      "familyname": "Strydom",
+      "givennames": "Tanya",
+      "email": "tanya.strydom@umontreal.ca",
+      "status": ["equal"],
+      "orcid": "0000-0001-6067-1349"
+    },
+    {
+      "affiliations": [
+        "University of Colorado Boulder"
+      ],
+      "familyname": "Resasco",
+      "givennames": "Julian",
+      "email": "jresasco@colorado.edu",
+      "status": ["equal"],
+      "orcid": ""
     }
   ],
   "abstract": {
@@ -19,9 +143,11 @@
     "Internals": "GitHub actions and a series of python scritpts. The markdown is handled with `pandoc`."
   },
   "keywords": [
-    "pandoc",
-    "pandoc-crossref",
-    "github actions"
+    "species interactions",
+    "ecological forecasting",
+    "pollinators",
+    "bumbleebees",
+    "network ecology"
   ],
   "citationstyle": "ecology-letters"
 }
