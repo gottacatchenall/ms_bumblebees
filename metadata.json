@@ -31,7 +31,6 @@
       "familyname": "CaraDonna",
       "givennames": "Paul",
       "email": "",
-      "status": ["equal"],
       "orcid": ""
     },
     {
@@ -91,7 +90,6 @@
       "familyname": "Ogilvie",
       "givennames": "Jane E.",
       "email": "",
-      "status": ["equal"],
       "orcid": ""
     },
     {
@@ -112,7 +110,6 @@
       "familyname": "Poisot",
       "givennames": "Timothée",
       "email": "timothee.poisot@umontreal.ca",
-      "status": ["equal"],
       "orcid": "0000-0002-0735-5184"
     },
     {
@@ -123,7 +120,6 @@
       "familyname": "Strydom",
       "givennames": "Tanya",
       "email": "tanya.strydom@umontreal.ca",
-      "status": ["equal"],
       "orcid": "0000-0001-6067-1349"
     },
     {
@@ -133,7 +129,6 @@
       "familyname": "Resasco",
       "givennames": "Julian",
       "email": "jresasco@colorado.edu",
-      "status": ["equal"],
       "orcid": ""
     }
   ],
