@@ -270,7 +270,7 @@ Two dimensions: spatial and temporal.
 \setcounter{enumi}{1}
 \tightlist
 \item
-  Phenological uncoupling (\textbf{Olesen2011MisFor?}).
+  Phenological uncoupling (Olesen \emph{et al.} 2011).
 \end{enumerate}
 
 \begin{itemize}
@@ -284,7 +284,7 @@ data from several sites, crowd-sourced data (GBIF), and remotely-sensed
 data. to produce a \emph{spatially and temporally explict} metaweb of
 bumblebee-flower interactions across Colorado. We then estimate the
 change in spatial and temporal overlap over time using the CMIP6 climate
-consensus forecast (\textbf{Karger2017CliHig?}).
+consensus forecast (Karger \emph{et al.} 2017).
 
 \hypertarget{methods}{%
 \section{Methods}\label{methods}}
@@ -331,10 +331,9 @@ details from Julian).
 \subsubsection{Remote-sensing data}\label{remote-sensing-data}}
 
 The remote-sensing data consists of high-resolution LiDAR elevation data
-at 1 meter spatial resolution
-{[}(\textbf{NationalEcologicalObservatoryNetworkNEON2021EleLid?});{]},
-and daily 1km resolution precipitation and temperature from CHELSA
-(\textbf{Karger2021GloDai?}).
+at 1 meter spatial resolution {[}(NEON) (2021);{]}, and daily 1km
+resolution precipitation and temperature from CHELSA (Karger \emph{et
+al.} 2021).
 
 \hypertarget{phylogenic-data}{%
 \subsubsection{Phylogenic data}\label{phylogenic-data}}
@@ -379,41 +378,20 @@ In gravel et al 2017
 Then decompose probability of co-occurence as
 \[P(X_{iy}, X_{jy}) = P(X_{iy})P(X_{jy})\]
 
-\hypertarget{a-predictive-model-to-make-spatially-explicit-network-prediction}{%
-\subsection{A predictive model to make spatially explicit network
-prediction}\label{a-predictive-model-to-make-spatially-explicit-network-prediction}}
+\hypertarget{model-fitting-and-validation}{%
+\subsection{Model fitting and
+validation}\label{model-fitting-and-validation}}
 
-The goal is two have two predictive models: interaction-predictor model
-and a distribution-predictor model (a la Strydom \& Catchen et al.~2021,
-figure 2).
+Models are implemented and fitted in Julia v1.6, using Turing.jl
+{[}cite{]}
 
-The interaction-predictor model, \(f_i(s_i,s_j, \theta_i)\) predicts
-interaction based on species-level features \((s_i, s_j)\), and is
-trained on the field-data.
+\hypertarget{training-test-validation-split-scheme}{%
+\subsubsection{Training-test-validation split
+scheme}\label{training-test-validation-split-scheme}}
 
-These features could include Phylogeny (to be determined: how available
-are genomes or trees for these species) Environment/Climate Traits (to
-be determined: what trait data is available, how annoying is it to
-clean) Time (only for the phenology model, see 3.2 and 3.3)
-
-The distribution-predictor model, \(f_s(s_i, \vec{x}, t)\) is trained on
-GBIF data to predict the occurrence of species with features si at a
-location in space x, and time t. Many options here. Here the species
-level features could be Climatic variables derived from remote sensing
-products. Co-occurence to make a JSDM Potentially weighted by phenology
-information from field data. Time (only for the phenology model, see 3.2
-and 3.3)
-
-\hypertarget{combining-distribution-predictor-and-interaction-predictor-models}{%
-\subsection{Combining distribution-predictor and interaction-predictor
-models}\label{combining-distribution-predictor-and-interaction-predictor-models}}
-
-Can split this into two based on how the distribution-predictor works.
-If \(f_s\) predicts co-occurrence, then draw the species pool first and
-predict interactions between the species in that pool. If \(f_s\) is a
-single-species SDM, get the occurrence probability for each species p\_s
-and compute the probability of observing interaction as function of the
-product of occ. prob.
+How do this? Do we remove sites entirely? Years entirely? Perhaps pikes
+peak would be best as a validation set as its only one year anyway and
+is a larger elevation gradient.
 
 \hypertarget{results}{%
 \section{Results}\label{results}}
@@ -455,6 +433,31 @@ component of overlap from spatial component.
 \subsection{Acknowledgements}\label{acknowledgements}}
 
 \hypertarget{references}{%
-\section{References}\label{references}}
+\section*{References}\label{references}}
+\addcontentsline{toc}{section}{References}
+
+\hypertarget{refs}{}
+\begin{CSLReferences}{1}{0}
+\leavevmode\hypertarget{ref-Karger2017CliHig}{}%
+Karger, D.N., Conrad, O., Böhner, J., Kawohl, T., Kreft, H., Soria-Auza,
+R.W., \emph{et al.} (2017). Climatologies at high resolution for the
+earth's land surface areas. \emph{Scientific Data}, 4, 170122.
+
+\leavevmode\hypertarget{ref-Karger2021GloDai}{}%
+Karger, D.N., Wilson, A.M., Mahony, C., Zimmermann, N.E. \& Jetz, W.
+(2021). Global daily 1km land surface precipitation based on cloud
+cover-informed downscaling. \emph{arXiv:2012.10108 {[}physics{]}}.
+
+\leavevmode\hypertarget{ref-NationalEcologicalObservatoryNetworkNEON2021EleLid}{}%
+(NEON), N.E.O.N. (2021). Elevation - LiDAR (DP3.30024.001):
+RELEASE-2021.
+
+\leavevmode\hypertarget{ref-Olesen2011MisFor}{}%
+Olesen, J.M., Bascompte, J., Dupont, Y.L., Elberling, H., Rasmussen, C.
+\& Jordano, P. (2011). Missing and forbidden links in mutualistic
+networks. \emph{Proceedings of the Royal Society B: Biological
+Sciences}, 278, 725--732.
+
+\end{CSLReferences}
 
 \end{document}

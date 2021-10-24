@@ -282,12 +282,12 @@
             <li>dispersal capacity and range shifts</li>
             </ul>
             <ol start="2" type="1">
-            <li>Phenological uncoupling <span class="citation" data-cites="Olesen2011MisFor">(<strong>Olesen2011MisFor?</strong>)</span>.</li>
+            <li>Phenological uncoupling <span class="citation" data-cites="Olesen2011MisFor">(Olesen <em>et al.</em> 2011)</span>.</li>
             </ol>
             <ul>
             <li>Abundance is a function of time in the year</li>
             </ul>
-            <p>In this paper we…. combine data from a variety of sources: field data from several sites, crowd-sourced data (GBIF), and remotely-sensed data. to produce a <em>spatially and temporally explict</em> metaweb of bumblebee-flower interactions across Colorado. We then estimate the change in spatial and temporal overlap over time using the CMIP6 climate consensus forecast <span class="citation" data-cites="Karger2017CliHig">(<strong>Karger2017CliHig?</strong>)</span>.</p>
+            <p>In this paper we…. combine data from a variety of sources: field data from several sites, crowd-sourced data (GBIF), and remotely-sensed data. to produce a <em>spatially and temporally explict</em> metaweb of bumblebee-flower interactions across Colorado. We then estimate the change in spatial and temporal overlap over time using the CMIP6 climate consensus forecast <span class="citation" data-cites="Karger2017CliHig">(Karger <em>et al.</em> 2017)</span>.</p>
             <h1 id="methods">Methods</h1>
             <figure>
             <img src="./figures/concept_v2.png" id="fig:concept" alt="Figure 1: todo" /><figcaption aria-hidden="true">Figure 1: todo</figcaption>
@@ -301,7 +301,7 @@
             <h3 id="gbif-data">GBIF data</h3>
             <p>The data from Global Biodiversity Information Facility (GBIF) itself comes in two forms: (1) spatial records of bumblebee and flower records (2) sparsely available records of the plants a bee was observed on (TODO details from Julian).</p>
             <h3 id="remote-sensing-data">Remote-sensing data</h3>
-            <p>The remote-sensing data consists of high-resolution LiDAR elevation data at 1 meter spatial resolution [<span class="citation" data-cites="NationalEcologicalObservatoryNetworkNEON2021EleLid">(<strong>NationalEcologicalObservatoryNetworkNEON2021EleLid?</strong>)</span>;], and daily 1km resolution precipitation and temperature from CHELSA <span class="citation" data-cites="Karger2021GloDai">(<strong>Karger2021GloDai?</strong>)</span>.</p>
+            <p>The remote-sensing data consists of high-resolution LiDAR elevation data at 1 meter spatial resolution [<span class="citation" data-cites="NationalEcologicalObservatoryNetworkNEON2021EleLid">(NEON) (2021)</span>;], and daily 1km resolution precipitation and temperature from CHELSA <span class="citation" data-cites="Karger2021GloDai">(Karger <em>et al.</em> 2021)</span>.</p>
             <h3 id="phylogenic-data">Phylogenic data</h3>
             <p>The phylogenetic data consists of genomic barcodes available from NCBI GenBank.</p>
             <h2 id="a-spatiotemporally-explicit-predictive-metaweb-model">A spatiotemporally explicit predictive metaweb model</h2>
@@ -315,13 +315,10 @@
             <p><strong><em>Relative-abundance + phylogeny-embedding</em></strong>: $$</p>
             <p><strong><em>Relative-abundance + environment-embedding + phylogeny-embedding</em></strong></p>
             <p>In gravel et al 2017 <span class="math display"><em>P</em>(<em>X</em><sub><em>i</em><em>y</em></sub>, <em>X</em><sub><em>j</em><em>y</em></sub>, <em>L</em><sub><em>i</em><em>j</em><em>y</em></sub>|<em>E</em><sub><em>y</em></sub>) = <em>P</em>(<em>X</em><sub><em>i</em><em>y</em></sub>, <em>X</em><sub><em>j</em><em>y</em></sub><em>P</em>(<em>L</em><sub><em>i</em><em>j</em><em>y</em></sub>|<em>X</em><sub><em>i</em><em>y</em></sub>, <em>X</em><sub><em>j</em><em>y</em></sub>, <em>E</em><sub><em>y</em></sub>)</span> Then decompose probability of co-occurence as <span class="math display"><em>P</em>(<em>X</em><sub><em>i</em><em>y</em></sub>, <em>X</em><sub><em>j</em><em>y</em></sub>) = <em>P</em>(<em>X</em><sub><em>i</em><em>y</em></sub>)<em>P</em>(<em>X</em><sub><em>j</em><em>y</em></sub>)</span></p>
-            <h2 id="a-predictive-model-to-make-spatially-explicit-network-prediction">A predictive model to make spatially explicit network prediction</h2>
-            <p>The goal is two have two predictive models: interaction-predictor model and a distribution-predictor model (a la Strydom &amp; Catchen et al. 2021, figure 2).</p>
-            <p>The interaction-predictor model, <span class="math inline"><em>f</em><sub><em>i</em></sub>(<em>s</em><sub><em>i</em></sub>, <em>s</em><sub><em>j</em></sub>, <em>θ</em><sub><em>i</em></sub>)</span> predicts interaction based on species-level features <span class="math inline">(<em>s</em><sub><em>i</em></sub>, <em>s</em><sub><em>j</em></sub>)</span>, and is trained on the field-data.</p>
-            <p>These features could include Phylogeny (to be determined: how available are genomes or trees for these species) Environment/Climate Traits (to be determined: what trait data is available, how annoying is it to clean) Time (only for the phenology model, see 3.2 and 3.3)</p>
-            <p>The distribution-predictor model, <span class="math inline"><em>f</em><sub><em>s</em></sub>(<em>s</em><sub><em>i</em></sub>, <em>x⃗</em>, <em>t</em>)</span> is trained on GBIF data to predict the occurrence of species with features si at a location in space x, and time t. Many options here. Here the species level features could be Climatic variables derived from remote sensing products. Co-occurence to make a JSDM Potentially weighted by phenology information from field data. Time (only for the phenology model, see 3.2 and 3.3)</p>
-            <h2 id="combining-distribution-predictor-and-interaction-predictor-models">Combining distribution-predictor and interaction-predictor models</h2>
-            <p>Can split this into two based on how the distribution-predictor works. If <span class="math inline"><em>f</em><sub><em>s</em></sub></span> predicts co-occurrence, then draw the species pool first and predict interactions between the species in that pool. If <span class="math inline"><em>f</em><sub><em>s</em></sub></span> is a single-species SDM, get the occurrence probability for each species p_s and compute the probability of observing interaction as function of the product of occ. prob.</p>
+            <h2 id="model-fitting-and-validation">Model fitting and validation</h2>
+            <p>Models are implemented and fitted in Julia v1.6, using Turing.jl [cite]</p>
+            <h3 id="training-test-validation-split-scheme">Training-test-validation split scheme</h3>
+            <p>How do this? Do we remove sites entirely? Years entirely? Perhaps pikes peak would be best as a validation set as its only one year anyway and is a larger elevation gradient.</p>
             <h1 id="results">Results</h1>
             <p>After comparing different combinations of features/model structures and finding the ‘best’ performing model on validation data.</p>
             <h2 id="figure-one-spatial-species-pool-and-network-prediction">Figure one: spatial species pool and network prediction</h2>
@@ -333,7 +330,21 @@
             <p>We can get a CMIP6 forecast of temperature and precipitation, and then predict how many observed interactions in the field data will no longer have their composing species’ distributions overlap. Decompose temporal component of overlap from spatial component.</p>
             <h1 id="discussion">Discussion</h1>
             <h2 id="acknowledgements">Acknowledgements</h2>
-            <h1 id="references">References</h1>
+            <h1 class="unnumbered" id="references">References</h1>
+            <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+            <div id="ref-Karger2017CliHig" class="csl-entry" role="doc-biblioentry">
+            Karger, D.N., Conrad, O., Böhner, J., Kawohl, T., Kreft, H., Soria-Auza, R.W., <em>et al.</em> (2017). Climatologies at high resolution for the earth’s land surface areas. <em>Scientific Data</em>, 4, 170122.
+            </div>
+            <div id="ref-Karger2021GloDai" class="csl-entry" role="doc-biblioentry">
+            Karger, D.N., Wilson, A.M., Mahony, C., Zimmermann, N.E. &amp; Jetz, W. (2021). Global daily 1km land surface precipitation based on cloud cover-informed downscaling. <em>arXiv:2012.10108 [physics]</em>.
+            </div>
+            <div id="ref-NationalEcologicalObservatoryNetworkNEON2021EleLid" class="csl-entry" role="doc-biblioentry">
+            (NEON), N.E.O.N. (2021). Elevation - LiDAR (DP3.30024.001): RELEASE-2021.
+            </div>
+            <div id="ref-Olesen2011MisFor" class="csl-entry" role="doc-biblioentry">
+            Olesen, J.M., Bascompte, J., Dupont, Y.L., Elberling, H., Rasmussen, C. &amp; Jordano, P. (2011). Missing and forbidden links in mutualistic networks. <em>Proceedings of the Royal Society B: Biological Sciences</em>, 278, 725–732.
+            </div>
+            </div>
         </article>
     </main>
 
