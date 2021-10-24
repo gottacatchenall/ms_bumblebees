@@ -277,17 +277,35 @@
             <li>Elevation gradients.</li>
             </ol>
             <ul>
+            <li>range shifts in latitude context</li>
+            <li>apply this to elevational gradients</li>
             <li>dispersal capacity and range shifts</li>
             </ul>
             <ol start="2" type="1">
-            <li>Phenological uncoupling [cite].</li>
+            <li>Phenological uncoupling <span class="citation" data-cites="Olesen2011MisFor">(<strong>Olesen2011MisFor?</strong>)</span>.</li>
             </ol>
             <ul>
             <li>Abundance is a function of time in the year</li>
             </ul>
+            <p>In this paper we…. combine data from a variety of sources: field data from several sites, crowd-sourced data (GBIF), and remotely-sensed data. to produce a <em>spatially and temporally explict</em> metaweb of bumblebee-flower interactions across Colorado. We then estimate the change in spatial and temporal overlap over time using the CMIP6 climate consensus forecast <span class="citation" data-cites="Karger2017CliHig">(<strong>Karger2017CliHig?</strong>)</span>.</p>
             <h1 id="methods">Methods</h1>
+            <figure>
+            <img src="./figures/concept_v2.png" id="fig:concept" alt="Figure 1: todo" /><figcaption aria-hidden="true">Figure 1: todo</figcaption>
+            </figure>
             <h2 id="data">Data</h2>
-            <h2 id="models">Models</h2>
+            <p>This project involves assembly and integration of data from a variety of (both structured and unstructured) sources. This data can be divided into four categories: field data, GBIF data, remote-sensing data, and phylogenetic data.</p>
+            <h3 id="field-data">Field data</h3>
+            <p>The field data consists of: (1) a seven year data-set from Rocky Mountain Biological Laboratory, consisting of season-long interaction and phenology data six plots along an elevation gradient. (2) a similar six year data set from Elk Meadows, CO, and (3) a year across a large elevation gradient at Pikes Peak.</p>
+            <p>Additional in-situ environmental sensors.</p>
+            <p>The partitioning of this data into training, test, and validation sets if described in the <em>Models</em> section.</p>
+            <h3 id="gbif-data">GBIF data</h3>
+            <p>The data from Global Biodiversity Information Facility (GBIF) itself comes in two forms: (1) spatial records of bumblebee and flower records (2) sparsely available records of the plants a bee was observed on (TODO details from Julian).</p>
+            <h3 id="remote-sensing-data">Remote-sensing data</h3>
+            <p>The remote-sensing data consists of high-resolution LiDAR elevation data at 1 meter spatial resolution [<span class="citation" data-cites="NationalEcologicalObservatoryNetworkNEON2021EleLid">(<strong>NationalEcologicalObservatoryNetworkNEON2021EleLid?</strong>)</span>;], and daily 1km resolution precipitation and temperature from CHELSA <span class="citation" data-cites="Karger2021GloDai">(<strong>Karger2021GloDai?</strong>)</span>.</p>
+            <h3 id="phylogenic-data">Phylogenic data</h3>
+            <p>The phylogenetic data consists of genomic barcodes available from NCBI GenBank.</p>
+            <h2 id="a-spatiotemporally-explicit-predictive-metaweb-model">A spatiotemporally explicit predictive metaweb model</h2>
+            <p>What does it mean for it to be “spatiotemporally explicit?” Well the formal definition of a metaweb is total species pool and</p>
             <p>We denote the predicted probability of two species, <span class="math inline"><em>i</em></span> and <span class="math inline"><em>j</em></span>, interacting a <span class="math inline"><em>p</em><sub><em>i</em><em>j</em></sub></span>. The outcome is here is to build a model <span class="math inline"><em>f</em></span>, or rather a set of candidate models, that take <span class="math inline"><em>i</em></span> and <span class="math inline"><em>j</em></span> and inputs, and which potentially combine this with .features</p>
             <p><span class="math display"><em>p</em><sub><em>i</em><em>j</em></sub> = <em>f</em>(<em>i</em>, <em>j</em>)</span></p>
             <h3 id="candidate-models">Candidate models</h3>
@@ -296,9 +314,6 @@
             <p><strong><em>Relative-abundance + environment-embedding</em></strong>: <span class="math inline"><em>f</em>(<em>i</em>, <em>j</em>) = <em>g</em>(<em>i</em>, <em>j</em>, <em>E</em><sub><em>i</em></sub>, <em>E</em><sub><em>j</em></sub>)</span></p>
             <p><strong><em>Relative-abundance + phylogeny-embedding</em></strong>: $$</p>
             <p><strong><em>Relative-abundance + environment-embedding + phylogeny-embedding</em></strong></p>
-            <figure>
-            <img src="./figures/concept_v2.png" id="fig:concept" alt="Figure 1: todo" /><figcaption aria-hidden="true">Figure 1: todo</figcaption>
-            </figure>
             <p>In gravel et al 2017 <span class="math display"><em>P</em>(<em>X</em><sub><em>i</em><em>y</em></sub>, <em>X</em><sub><em>j</em><em>y</em></sub>, <em>L</em><sub><em>i</em><em>j</em><em>y</em></sub>|<em>E</em><sub><em>y</em></sub>) = <em>P</em>(<em>X</em><sub><em>i</em><em>y</em></sub>, <em>X</em><sub><em>j</em><em>y</em></sub><em>P</em>(<em>L</em><sub><em>i</em><em>j</em><em>y</em></sub>|<em>X</em><sub><em>i</em><em>y</em></sub>, <em>X</em><sub><em>j</em><em>y</em></sub>, <em>E</em><sub><em>y</em></sub>)</span> Then decompose probability of co-occurence as <span class="math display"><em>P</em>(<em>X</em><sub><em>i</em><em>y</em></sub>, <em>X</em><sub><em>j</em><em>y</em></sub>) = <em>P</em>(<em>X</em><sub><em>i</em><em>y</em></sub>)<em>P</em>(<em>X</em><sub><em>j</em><em>y</em></sub>)</span></p>
             <h2 id="a-predictive-model-to-make-spatially-explicit-network-prediction">A predictive model to make spatially explicit network prediction</h2>
             <p>The goal is two have two predictive models: interaction-predictor model and a distribution-predictor model (a la Strydom &amp; Catchen et al. 2021, figure 2).</p>

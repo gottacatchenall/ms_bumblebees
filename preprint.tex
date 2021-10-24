@@ -315,6 +315,10 @@ Two dimensions: spatial and temporal.
 \begin{itemize}
 \tightlist
 \item
+  range shifts in latitude context
+\item
+  apply this to elevational gradients
+\item
   dispersal capacity and range shifts
 \end{itemize}
 
@@ -323,7 +327,7 @@ Two dimensions: spatial and temporal.
 \setcounter{enumi}{1}
 \tightlist
 \item
-  Phenological uncoupling {[}cite{]}.
+  Phenological uncoupling (\textbf{Olesen2011MisFor?}).
 \end{enumerate}
 
 \begin{itemize}
@@ -332,14 +336,75 @@ Two dimensions: spatial and temporal.
   Abundance is a function of time in the year
 \end{itemize}
 
+In this paper we\ldots. combine data from a variety of sources: field
+data from several sites, crowd-sourced data (GBIF), and remotely-sensed
+data. to produce a \emph{spatially and temporally explict} metaweb of
+bumblebee-flower interactions across Colorado. We then estimate the
+change in spatial and temporal overlap over time using the CMIP6 climate
+consensus forecast (\textbf{Karger2017CliHig?}).
+
 \hypertarget{methods}{%
 \section{Methods}\label{methods}}
+
+\begin{figure}
+\hypertarget{fig:concept}{%
+\centering
+\includegraphics{./figures/concept_v2.png}
+\caption{todo}\label{fig:concept}
+}
+\end{figure}
 
 \hypertarget{data}{%
 \subsection{Data}\label{data}}
 
-\hypertarget{models}{%
-\subsection{Models}\label{models}}
+This project involves assembly and integration of data from a variety of
+(both structured and unstructured) sources. This data can be divided
+into four categories: field data, GBIF data, remote-sensing data, and
+phylogenetic data.
+
+\hypertarget{field-data}{%
+\subsubsection{Field data}\label{field-data}}
+
+The field data consists of: (1) a seven year data-set from Rocky
+Mountain Biological Laboratory, consisting of season-long interaction
+and phenology data six plots along an elevation gradient. (2) a similar
+six year data set from Elk Meadows, CO, and (3) a year across a large
+elevation gradient at Pikes Peak.
+
+Additional in-situ environmental sensors.
+
+The partitioning of this data into training, test, and validation sets
+if described in the \emph{Models} section.
+
+\hypertarget{gbif-data}{%
+\subsubsection{GBIF data}\label{gbif-data}}
+
+The data from Global Biodiversity Information Facility (GBIF) itself
+comes in two forms: (1) spatial records of bumblebee and flower records
+(2) sparsely available records of the plants a bee was observed on (TODO
+details from Julian).
+
+\hypertarget{remote-sensing-data}{%
+\subsubsection{Remote-sensing data}\label{remote-sensing-data}}
+
+The remote-sensing data consists of high-resolution LiDAR elevation data
+at 1 meter spatial resolution
+{[}(\textbf{NationalEcologicalObservatoryNetworkNEON2021EleLid?});{]},
+and daily 1km resolution precipitation and temperature from CHELSA
+(\textbf{Karger2021GloDai?}).
+
+\hypertarget{phylogenic-data}{%
+\subsubsection{Phylogenic data}\label{phylogenic-data}}
+
+The phylogenetic data consists of genomic barcodes available from NCBI
+GenBank.
+
+\hypertarget{a-spatiotemporally-explicit-predictive-metaweb-model}{%
+\subsection{A spatiotemporally explicit predictive metaweb
+model}\label{a-spatiotemporally-explicit-predictive-metaweb-model}}
+
+What does it mean for it to be ``spatiotemporally explicit?'' Well the
+formal definition of a metaweb is total species pool and
 
 We denote the predicted probability of two species, \(i\) and \(j\),
 interacting a \(p_{ij}\). The outcome is here is to build a model \(f\),
@@ -365,14 +430,6 @@ inputs, and which potentially combine this with .features
 
 \textbf{\emph{Relative-abundance + environment-embedding +
 phylogeny-embedding}}
-
-\begin{figure}
-\hypertarget{fig:concept}{%
-\centering
-\includegraphics{./figures/concept_v2.png}
-\caption{todo}\label{fig:concept}
-}
-\end{figure}
 
 In gravel et al 2017
 \[P(X_{iy}, X_{jy}, L_{ijy} | E_y) = P(X_{iy},X_{jy}P(L_{ijy} | X_{iy}, X_{jy}, E_y)\]
