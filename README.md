@@ -1,11 +1,17 @@
 
-_title ideas_:
-Forecasting the spatio-temporal uncoupling of bumblebee-flower interaction
-networks
-
 # Introduction
 
+Earth's ecosystems are subject to rapid change  due to both climate
+and land-use change [@cite]. These sudden shifts in environment alter
+both the spatial and temporal distribution of species.
 
+Ecosystems are composed of interactions between species.
+
+
+
+
+
+Species vary in spacem but also
 
 Species interactions and climate change.
 
@@ -13,13 +19,11 @@ Two dimensions: spatial and temporal.
 
 1) Elevation gradients.
 - range shifts in latitude context
-- apply this to elevational gradients
+- apply this to elevation gradients
 - dispersal capacity and range shifts
 
 2) Phenological uncoupling [@Olesen2011MisFor].
 - Abundance is a function of time in the year
-
-
 
 In this paper we.... combine data from a variety of sources: field
 data from several sites, crowd-sourced data (GBIF), and remotely-sensed
@@ -64,11 +68,9 @@ observed on (TODO details from Julian).
 
 ### Remote-sensing data
 
-The remote-sensing data consists of high-resolution LiDAR elevation
-data at 1 meter spatial resolution
-[@NationalEcologicalObservatoryNetworkNEON2021EleLid;], and daily 1km
-resolution precipitation and temperature from CHELSA
-[@Karger2021GloDai].
+The remote-sensing data consists of 15-arcsecond elevation
+data[@GMTED2020, cite], and daily 1km resolution precipitation and
+temperature from CHELSA [@Karger2021GloDai].
 
 ### Phylogenic data
 

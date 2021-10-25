@@ -4,15 +4,6 @@
 using Markdown
 using InteractiveUtils
 
-# This Pluto notebook uses @bind for interactivity. When running this notebook outside of Pluto, the following 'mock version' of @bind gives bound variables a default value (instead of an error).
-macro bind(def, element)
-    quote
-        local el = $(esc(element))
-        global $(esc(def)) = Core.applicable(Base.get, el) ? Base.get(el) : missing
-        el
-    end
-end
-
 # ╔═╡ e462b0b8-c21d-428b-b9dc-29b0014b6897
 begin 
 	using DataFrames
@@ -20,45 +11,136 @@ begin
 	using SimpleSDMLayers
 	using CSV
 	using Distributions
+	using MultivariateStats
+	ENV["RASTERDATASOURCES_PATH"] = "/home/michael/data/"
 end
 
 # ╔═╡ 5f966b24-4601-4055-b897-08c19b7575e4
 md"# Bumblebee metaweb niche embedding"
 
+# ╔═╡ 927d4315-c4ff-4f8f-8923-6e399f40b23d
+
+
 # ╔═╡ dd397d2b-6126-47e9-b38c-daf62d9564f3
-md"## load packages"
+md"#### 1 Load packages"
+
+# ╔═╡ ddcba724-30e0-404e-a072-a44708171ae7
+md"#### 2 Load occurrence maps"
 
 # ╔═╡ 48e7c1d0-e5e7-4203-ac36-b20fe6f90758
+begin 
+	bee_occurrence_dir_path = "/home/michael/papers/ms_bumblebees/src/cleandata/bee_occurrence/"
+	bee_occurrence_filenames = string.(bee_occurrence_dir_path, split(read(`ls -1v $bee_occurrence_dir_path`, String)))
+end
 
-
-# ╔═╡ ea536901-5296-4c4c-8d5c-9f7e03fdadf9
-md"## run"
-
-# ╔═╡ fc33f8b1-d32b-4ef9-85c7-44a335f48a80
-N, P = 1000, 0.2
-
-# ╔═╡ f07f2c06-cdda-4856-8bf3-04eb6ebde77e
-dist = NegativeBinomial(N, P)
-
-# ╔═╡ ea44df47-adec-45dc-8c3c-dfa5f41e7c27
-@bind n html"<input type=range>"
-
-# ╔═╡ 0e29c7e9-0c7d-4e39-8846-07a1cfb6fd01
-f(n) = rand(dist, n)
-
-# ╔═╡ dcf4c486-dd8d-4172-9528-61684e960fce
-begin
-	sample = f(n)
+# ╔═╡ a08fa15f-7c05-43c4-a4b8-7c73c7a49c23
+begin 
+	tifs = []
+	for f in bee_occurrence_filenames 
+		a = geotiff(SimpleSDMPredictor, f)
+		push!(tifs, a)
+	end
 end
 
 # ╔═╡ 3c761a33-8f28-4fd6-ae0d-66ce7004bf29
-
-
-# ╔═╡ f3eaba52-66a0-45e3-b243-f70a62614c00
-
+md"#### Load environment data
+##### CHELSA data
+"
 
 # ╔═╡ 5e9fc96a-ff6a-4fca-9feb-bbfff6f6e800
+begin
+	bounds = (left=-109.6, right=-102.4, top=40.995, bottom=37.01)
+	layers = SimpleSDMPredictor(CHELSA, BioClim, 1:19; bounds...);
+	heatmap(layers[1].grid, dpi=1000)
+end
 
+# ╔═╡ 3a35ccd2-a632-411b-98b8-43afbc5d64a8
+md"###### Elevation data"
+
+# ╔═╡ bdcab8ec-7bd2-4d81-b7dd-e3d033dc8b67
+begin
+	elev_fine = geotiff(SimpleSDMPredictor, "../cleandata/co_elev.tif")
+end
+
+# ╔═╡ 7613338d-f8cf-4995-a31a-30b0bc993142
+npts = prod(size(layers[end]))
+
+# ╔═╡ 4e7f1827-84b4-48bc-81f6-db5a314ce5a1
+begin
+
+innertype(a::SimpleSDMPredictor{T}) where {T} = T
+
+function make_same_dims(input::IT, target::TT) where {IT,TT <: SimpleSDMLayer}
+	lat, long = collect(longitudes(target)), collect(latitudes(target))
+	newgrid = similar(target)
+	for lt in lat, lg in long
+		newgrid[lt,lg] = input[lt,lg]
+	end
+	SimpleSDMPredictor(newgrid.grid)
+end
+	
+end
+
+# ╔═╡ 708975e6-19e6-47ce-a6df-af88ac5ba55e
+begin
+	elev_fixed = make_same_dims(elev_fine, layers[1])
+	heatmap(elev_fixed.grid)
+end
+
+# ╔═╡ 00373382-9875-491a-a736-7462f30abbb4
+push!(layers, elev_fixed)
+
+# ╔═╡ b5f0ae62-d8ff-408b-bf4d-e978561874ec
+md"#### Do PCA on environmental data"
+
+# ╔═╡ 0fdd19f6-b137-4ec3-94d3-69507dd664ed
+function make_pca_input(layers) 
+	numdims = length(layers)
+	numsites = prod(size(layers[begin]))
+	pcainput = zeros(numdims, numsites)
+	
+	for i in eachindex(layers[1])
+		for layernum in 1:length(layers)
+			if !isnothing(layers[layernum][i])
+				pcainput[layernum,i] = layers[layernum][i]
+			else
+			end
+		end
+	end
+	pcainput
+end
+
+# ╔═╡ 3963715d-6ded-463c-bf79-6231840c3fe3
+function make_pca_layers(layers)
+	pcainput = make_pca_input(layers)
+	numdims, numsites = length(layers), prod(size(layers[begin]))
+
+	pca = fit(PCA, pcainput)
+	A = projection(pca)
+	
+	transformedvals = zeros(outdim(pca), numsites)
+	
+	for loc in 1:numsites
+		transformedvals[:,loc] =  A' * vec(pcainput[:,loc])
+	end
+	
+	newlayers = [zeros(Float32, size(layers[begin])) for l in 1:outdim(pca)]
+	for loc in 1:numsites
+		for layer in 1:outdim(pca)
+			newlayers[layer][loc] =  transformedvals[layer,loc]
+		end
+	end
+	SimpleSDMPredictor.(newlayers)
+end
+
+# ╔═╡ bf765d91-9608-42fa-9090-8446c45e2e14
+transformed_layers = make_pca_layers(layers)
+
+# ╔═╡ 0497521c-37d5-4b58-948e-63499654d135
+plts = plot.(transformed_layers)
+
+# ╔═╡ 5a304b8c-7f2a-4c01-81f2-6e17fec136d4
+plot(plts..., layout=(2,2))
 
 # ╔═╡ 00000000-0000-0000-0000-000000000001
 PLUTO_PROJECT_TOML_CONTENTS = """
@@ -66,6 +148,7 @@ PLUTO_PROJECT_TOML_CONTENTS = """
 CSV = "336ed68f-0bac-5ca0-87d4-7b16caf5d00b"
 DataFrames = "a93c6f00-e57d-5684-b7b6-d8193f3e46c0"
 Distributions = "31c24e10-a181-5473-b8eb-7969acd0382f"
+MultivariateStats = "6f286f6a-111f-5878-ab1e-185364afe411"
 Plots = "91a5bcdd-55d7-5caf-9e0b-520d859cae80"
 SimpleSDMLayers = "2c645270-77db-11e9-22c3-0f302a89c64c"
 
@@ -73,6 +156,7 @@ SimpleSDMLayers = "2c645270-77db-11e9-22c3-0f302a89c64c"
 CSV = "~0.9.9"
 DataFrames = "~1.2.2"
 Distributions = "~0.25.20"
+MultivariateStats = "~0.8.0"
 Plots = "~1.22.7"
 SimpleSDMLayers = "~0.8.3"
 """
@@ -101,6 +185,18 @@ version = "0.7.4"
 
 [[ArgTools]]
 uuid = "0dad84c5-d112-42e6-8d28-ef12dabb789f"
+
+[[Arpack]]
+deps = ["Arpack_jll", "Libdl", "LinearAlgebra"]
+git-tree-sha1 = "2ff92b71ba1747c5fdd541f8fc87736d82f40ec9"
+uuid = "7d9fca2a-8960-54d3-9f78-7d1dccf2cb97"
+version = "0.4.0"
+
+[[Arpack_jll]]
+deps = ["Libdl", "OpenBLAS_jll", "Pkg"]
+git-tree-sha1 = "e214a9b9bd1b4e1b4f15b22c0994862b66af7ff7"
+uuid = "68821587-b530-5797-8361-c406ea357684"
+version = "3.5.0+3"
 
 [[Artifacts]]
 uuid = "56f22d72-fd6d-98f1-02f0-08ddc0907c33"
@@ -642,6 +738,12 @@ version = "0.3.3"
 [[MozillaCACerts_jll]]
 uuid = "14a3606d-f60d-562e-9121-12d972cd8159"
 
+[[MultivariateStats]]
+deps = ["Arpack", "LinearAlgebra", "SparseArrays", "Statistics", "StatsBase"]
+git-tree-sha1 = "8d958ff1854b166003238fe191ec34b9d592860a"
+uuid = "6f286f6a-111f-5878-ab1e-185364afe411"
+version = "0.8.0"
+
 [[NaNMath]]
 git-tree-sha1 = "bfe47e760d60b82b66b61d2d44128b62e3a369fb"
 uuid = "77ba4419-2d1f-58cd-9bb1-8ffee604a2e3"
@@ -661,6 +763,10 @@ deps = ["Artifacts", "JLLWrappers", "Libdl", "Pkg"]
 git-tree-sha1 = "7937eda4681660b4d6aeeecc2f7e1c81c8ee4e2f"
 uuid = "e7412a2a-1a6e-54c0-be00-318e2571c051"
 version = "1.3.5+0"
+
+[[OpenBLAS_jll]]
+deps = ["Artifacts", "CompilerSupportLibraries_jll", "Libdl"]
+uuid = "4536629a-c528-5b80-bd46-f80d51c5b363"
 
 [[OpenJpeg_jll]]
 deps = ["Artifacts", "JLLWrappers", "Libdl", "Libtiff_jll", "LittleCMS_jll", "Pkg", "libpng_jll"]
@@ -1215,17 +1321,25 @@ version = "0.9.1+5"
 
 # ╔═╡ Cell order:
 # ╠═5f966b24-4601-4055-b897-08c19b7575e4
+# ╠═927d4315-c4ff-4f8f-8923-6e399f40b23d
 # ╟─dd397d2b-6126-47e9-b38c-daf62d9564f3
 # ╠═e462b0b8-c21d-428b-b9dc-29b0014b6897
+# ╟─ddcba724-30e0-404e-a072-a44708171ae7
 # ╠═48e7c1d0-e5e7-4203-ac36-b20fe6f90758
-# ╟─ea536901-5296-4c4c-8d5c-9f7e03fdadf9
-# ╠═fc33f8b1-d32b-4ef9-85c7-44a335f48a80
-# ╠═f07f2c06-cdda-4856-8bf3-04eb6ebde77e
-# ╠═ea44df47-adec-45dc-8c3c-dfa5f41e7c27
-# ╠═0e29c7e9-0c7d-4e39-8846-07a1cfb6fd01
-# ╠═dcf4c486-dd8d-4172-9528-61684e960fce
+# ╠═a08fa15f-7c05-43c4-a4b8-7c73c7a49c23
 # ╠═3c761a33-8f28-4fd6-ae0d-66ce7004bf29
-# ╠═f3eaba52-66a0-45e3-b243-f70a62614c00
 # ╠═5e9fc96a-ff6a-4fca-9feb-bbfff6f6e800
+# ╟─3a35ccd2-a632-411b-98b8-43afbc5d64a8
+# ╠═bdcab8ec-7bd2-4d81-b7dd-e3d033dc8b67
+# ╠═7613338d-f8cf-4995-a31a-30b0bc993142
+# ╠═4e7f1827-84b4-48bc-81f6-db5a314ce5a1
+# ╠═708975e6-19e6-47ce-a6df-af88ac5ba55e
+# ╠═00373382-9875-491a-a736-7462f30abbb4
+# ╟─b5f0ae62-d8ff-408b-bf4d-e978561874ec
+# ╠═0fdd19f6-b137-4ec3-94d3-69507dd664ed
+# ╠═3963715d-6ded-463c-bf79-6231840c3fe3
+# ╠═bf765d91-9608-42fa-9090-8446c45e2e14
+# ╠═0497521c-37d5-4b58-948e-63499654d135
+# ╠═5a304b8c-7f2a-4c01-81f2-6e17fec136d4
 # ╟─00000000-0000-0000-0000-000000000001
 # ╟─00000000-0000-0000-0000-000000000002
