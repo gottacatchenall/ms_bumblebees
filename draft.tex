@@ -157,17 +157,57 @@ urlcolor=blue}
 \begin{document}
 \raggedright
 \thispagestyle{empty}
-{\Large\bfseries\sffamily Template to prepare preprints and manuscripts
-using markdown and github actions}
+{\Large\bfseries\sffamily Forecasting the spatio-temporal uncoupling of
+bumblebee-flower interaction networks}
 \vskip 5em
 
 %
 \href{https://orcid.org/0000-0002-6506-6487}{Michael D.\,Catchen}%
 %
-\,\textsuperscript{1,2}
+\,\textsuperscript{1,2}\quad %
+\href{https://orcid.org/0000-0001-9051-0597}{Francis\,Banville}%
+%
+\,\textsuperscript{3,4,2}\quad %
+Paul\,CaraDonna%
+%
+\,\textsuperscript{5,6}\quad %
+\href{https://orcid.org/0000-0002-2151-6693}{Dominique\,Caron}%
+%
+\,\textsuperscript{1,2}\quad %
+\href{https://orcid.org/0000-0002-6248-3007}{Philippe\,Desjardins-Proulx}%
+%
+\,\textsuperscript{3,2}\quad %
+\href{https://orcid.org/0000-0001-9019-0108}{Norma R.\,Forero-Muñoz}%
+%
+\,\textsuperscript{3,2}\quad %
+\href{https://orcid.org/0000-0001-6075-8081}{Andrew\,Gonzalez}%
+%
+\,\textsuperscript{1,2}\quad %
+\href{https://orcid.org/0000-0002-4498-7076}{Dominique\,Gravel}%
+%
+\,\textsuperscript{4,2}\quad %
+Jane E.\,Ogilvie%
+%
+\,\textsuperscript{5}\quad %
+\href{https://orcid.org/0000-0002-6004-4027}{Laura\,Pollock}%
+%
+\,\textsuperscript{1,2}\quad %
+\href{https://orcid.org/0000-0002-0735-5184}{Timothée\,Poisot}%
+%
+\,\textsuperscript{3,2}\quad %
+\href{https://orcid.org/0000-0001-6067-1349}{Tanya\,Strydom}%
+%
+\,\textsuperscript{3,2}\quad %
+Julian\,Resasco%
+%
+\,\textsuperscript{7}
 
 \textsuperscript{1}\,McGill University\quad \textsuperscript{2}\,Québec
-Centre for Biodiversity Sciences
+Centre for Biodiversity Sciences\quad \textsuperscript{3}\,Université de
+Montréal\quad \textsuperscript{4}\,Université de
+Sherbrooke\quad \textsuperscript{5}\,Rocky Mountain Biological
+Laboratory\quad \textsuperscript{6}\,Chicago Bontanic
+Garden\quad \textsuperscript{7}\,University of Colorado Boulder
 
 
 \textbf{Correspondance to:}\\
@@ -198,11 +238,16 @@ scritpts. The markdown is handled with \texttt{pandoc}.\\%
 \linenumbers
 \pagestyle{normal}
 
-\emph{title ideas}: Forecasting the spatio-temporal uncoupling of
-bumblebee-flower interaction networks
-
 \hypertarget{introduction}{%
 \section{Introduction}\label{introduction}}
+
+Earth's ecosystems are subject to rapid change due to both climate and
+land-use change (\textbf{cite?}). These sudden shifts in environment
+alter both the spatial and temporal distribution of species.
+
+Ecosystems are composed of interactions between species.
+
+Species vary in spacem but also
 
 Species interactions and climate change.
 
@@ -218,6 +263,10 @@ Two dimensions: spatial and temporal.
 \begin{itemize}
 \tightlist
 \item
+  range shifts in latitude context
+\item
+  apply this to elevation gradients
+\item
   dispersal capacity and range shifts
 \end{itemize}
 
@@ -226,7 +275,7 @@ Two dimensions: spatial and temporal.
 \setcounter{enumi}{1}
 \tightlist
 \item
-  Phenological uncoupling {[}cite{]}.
+  Phenological uncoupling (Olesen \emph{et al.} 2011).
 \end{enumerate}
 
 \begin{itemize}
@@ -235,14 +284,73 @@ Two dimensions: spatial and temporal.
   Abundance is a function of time in the year
 \end{itemize}
 
+In this paper we\ldots. combine data from a variety of sources: field
+data from several sites, crowd-sourced data (GBIF), and remotely-sensed
+data. to produce a \emph{spatially and temporally explict} metaweb of
+bumblebee-flower interactions across Colorado. We then estimate the
+change in spatial and temporal overlap over time using the CMIP6 climate
+consensus forecast (Karger \emph{et al.} 2017).
+
 \hypertarget{methods}{%
 \section{Methods}\label{methods}}
+
+\begin{figure}
+\hypertarget{fig:concept}{%
+\centering
+\includegraphics{./figures/concept_v2.png}
+\caption{todo}\label{fig:concept}
+}
+\end{figure}
 
 \hypertarget{data}{%
 \subsection{Data}\label{data}}
 
-\hypertarget{models}{%
-\subsection{Models}\label{models}}
+This project involves assembly and integration of data from a variety of
+(both structured and unstructured) sources. This data can be divided
+into four categories: field data, GBIF data, remote-sensing data, and
+phylogenetic data.
+
+\hypertarget{field-data}{%
+\subsubsection{Field data}\label{field-data}}
+
+The field data consists of: (1) a seven year data-set from Rocky
+Mountain Biological Laboratory, consisting of season-long interaction
+and phenology data six plots along an elevation gradient. (2) a similar
+six year data set from Elk Meadows, CO, and (3) a year across a large
+elevation gradient at Pikes Peak.
+
+Additional in-situ environmental sensors.
+
+The partitioning of this data into training, test, and validation sets
+if described in the \emph{Models} section.
+
+\hypertarget{gbif-data}{%
+\subsubsection{GBIF data}\label{gbif-data}}
+
+The data from Global Biodiversity Information Facility (GBIF) itself
+comes in two forms: (1) spatial records of bumblebee and flower records
+(2) sparsely available records of the plants a bee was observed on (TODO
+details from Julian).
+
+\hypertarget{remote-sensing-data}{%
+\subsubsection{Remote-sensing data}\label{remote-sensing-data}}
+
+The remote-sensing data consists of 15-arcsecond elevation
+data(\textbf{GMTED2020?}, cite), and daily 1km resolution precipitation
+and temperature from CHELSA (Karger \emph{et al.} 2021).
+
+\hypertarget{phylogenic-data}{%
+\subsubsection{Phylogenic data}\label{phylogenic-data}}
+
+The phylogenetic data consists of genomic barcodes available from NCBI
+GenBank.
+
+\hypertarget{a-spatiotemporally-explicit-predictive-metaweb-model}{%
+\subsection{A spatiotemporally explicit predictive metaweb
+model}\label{a-spatiotemporally-explicit-predictive-metaweb-model}}
+
+What does it mean for it to be ``spatiotemporally explicit?'' Well the
+formal definition of a metaweb is total species pool and
 
 We denote the predicted probability of two species, \(i\) and \(j\),
 interacting a \(p_{ij}\). The outcome is here is to build a model \(f\),
@@ -269,54 +377,25 @@ inputs, and which potentially combine this with .features
 \textbf{\emph{Relative-abundance + environment-embedding +
 phylogeny-embedding}}
 
-\begin{figure}
-\hypertarget{fig:concept}{%
-\centering
-\includegraphics{./figures/concept_v2.png}
-\caption{todo}\label{fig:concept}
-}
-\end{figure}
-
 In gravel et al 2017
 \[P(X_{iy}, X_{jy}, L_{ijy} | E_y) = P(X_{iy},X_{jy}P(L_{ijy} | X_{iy}, X_{jy}, E_y)\]
 Then decompose probability of co-occurence as
 \[P(X_{iy}, X_{jy}) = P(X_{iy})P(X_{jy})\]
 
-\hypertarget{a-predictive-model-to-make-spatially-explicit-network-prediction}{%
-\subsection{A predictive model to make spatially explicit network
-prediction}\label{a-predictive-model-to-make-spatially-explicit-network-prediction}}
+\hypertarget{model-fitting-and-validation}{%
+\subsection{Model fitting and
+validation}\label{model-fitting-and-validation}}
 
-The goal is two have two predictive models: interaction-predictor model
-and a distribution-predictor model (a la Strydom \& Catchen et al.~2021,
-figure 2).
+Models are implemented and fitted in Julia v1.6, using Turing.jl
+{[}cite{]}
 
-The interaction-predictor model, \(f_i(s_i,s_j, \theta_i)\) predicts
-interaction based on species-level features \((s_i, s_j)\), and is
-trained on the field-data.
+\hypertarget{training-test-validation-split-scheme}{%
+\subsubsection{Training-test-validation split
+scheme}\label{training-test-validation-split-scheme}}
 
-These features could include Phylogeny (to be determined: how available
-are genomes or trees for these species) Environment/Climate Traits (to
-be determined: what trait data is available, how annoying is it to
-clean) Time (only for the phenology model, see 3.2 and 3.3)
-
-The distribution-predictor model, \(f_s(s_i, \vec{x}, t)\) is trained on
-GBIF data to predict the occurrence of species with features si at a
-location in space x, and time t. Many options here. Here the species
-level features could be Climatic variables derived from remote sensing
-products. Co-occurence to make a JSDM Potentially weighted by phenology
-information from field data. Time (only for the phenology model, see 3.2
-and 3.3)
-
-\hypertarget{combining-distribution-predictor-and-interaction-predictor-models}{%
-\subsection{Combining distribution-predictor and interaction-predictor
-models}\label{combining-distribution-predictor-and-interaction-predictor-models}}
-
-Can split this into two based on how the distribution-predictor works.
-If \(f_s\) predicts co-occurrence, then draw the species pool first and
-predict interactions between the species in that pool. If \(f_s\) is a
-single-species SDM, get the occurrence probability for each species p\_s
-and compute the probability of observing interaction as function of the
-product of occ. prob.
+How do this? Do we remove sites entirely? Years entirely? Perhaps pikes
+peak would be best as a validation set as its only one year anyway and
+is a larger elevation gradient.
 
 \hypertarget{results}{%
 \section{Results}\label{results}}
@@ -358,6 +437,27 @@ component of overlap from spatial component.
 \subsection{Acknowledgements}\label{acknowledgements}}
 
 \hypertarget{references}{%
-\section{References}\label{references}}
+\section*{References}\label{references}}
+\addcontentsline{toc}{section}{References}
+
+\hypertarget{refs}{}
+\begin{CSLReferences}{1}{0}
+\leavevmode\hypertarget{ref-Karger2017CliHig}{}%
+Karger, D.N., Conrad, O., Böhner, J., Kawohl, T., Kreft, H., Soria-Auza,
+R.W., \emph{et al.} (2017). Climatologies at high resolution for the
+earth's land surface areas. \emph{Scientific Data}, 4, 170122.
+
+\leavevmode\hypertarget{ref-Karger2021GloDai}{}%
+Karger, D.N., Wilson, A.M., Mahony, C., Zimmermann, N.E. \& Jetz, W.
+(2021). Global daily 1km land surface precipitation based on cloud
+cover-informed downscaling. \emph{arXiv:2012.10108 {[}physics{]}}.
+
+\leavevmode\hypertarget{ref-Olesen2011MisFor}{}%
+Olesen, J.M., Bascompte, J., Dupont, Y.L., Elberling, H., Rasmussen, C.
+\& Jordano, P. (2011). Missing and forbidden links in mutualistic
+networks. \emph{Proceedings of the Royal Society B: Biological
+Sciences}, 278, 725--732.
+
+\end{CSLReferences}
 
 \end{document}
