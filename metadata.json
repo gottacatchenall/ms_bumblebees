@@ -13,6 +13,25 @@
       "orcid": "0000-0002-6506-6487"
     },
     {
+      "affiliations": [
+        "Rocky Mountain Biological Laboratory",
+        "Chicago Bontanic Garden"
+      ],
+      "familyname": "CaraDonna",
+      "givennames": "Paul",
+      "email": "",
+      "orcid": ""
+    },
+    {
+      "affiliations": [
+        "Rocky Mountain Biological Laboratory"
+      ],
+      "familyname": "Ogilvie",
+      "givennames": "Jane E.",
+      "email": "",
+      "orcid": ""
+    },
+    {
     "affiliations": [
       "Université de Montréal",
       "Université de Sherbrooke",
@@ -22,16 +41,6 @@
     "givennames": "Francis",
     "email": "francis.banville@umontreal.ca",
     "orcid": "0000-0001-9051-0597"
-    },
-    {
-      "affiliations": [
-        "Rocky Mountain Biological Laboratory",
-        "Chicago Bontanic Garden"
-      ],
-      "familyname": "CaraDonna",
-      "givennames": "Paul",
-      "email": "",
-      "orcid": ""
     },
     {
       "affiliations": [
@@ -82,15 +91,6 @@
       "givennames": "Dominique",
       "email": "dominique.gravel@usherbrooke.ca",
       "orcid": "0000-0002-4498-7076"
-    },
-    {
-      "affiliations": [
-        "Rocky Mountain Biological Laboratory"
-      ],
-      "familyname": "Ogilvie",
-      "givennames": "Jane E.",
-      "email": "",
-      "orcid": ""
     },
     {
       "affiliations": [

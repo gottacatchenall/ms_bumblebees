@@ -27,14 +27,14 @@
      inkscape:pagecheckerboard="0"
      inkscape:document-units="mm"
      showgrid="false"
-     inkscape:zoom="0.3690671"
-     inkscape:cx="722.09091"
-     inkscape:cy="812.86031"
-     inkscape:window-width="1920"
-     inkscape:window-height="1043"
-     inkscape:window-x="0"
-     inkscape:window-y="313"
-     inkscape:window-maximized="1"
+     inkscape:zoom="2.0877588"
+     inkscape:cx="1051.6062"
+     inkscape:cy="912.46173"
+     inkscape:window-width="2538"
+     inkscape:window-height="1053"
+     inkscape:window-x="2514"
+     inkscape:window-y="182"
+     inkscape:window-maximized="0"
      inkscape:current-layer="layer1"
      showguides="true"
      inkscape:guide-bbox="true"
@@ -1091,7 +1091,7 @@
          id="tspan60147"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93889px;font-family:Cabin;-inkscape-font-specification:Cabin;stroke-width:0.264583"
          x="-74.04995"
-         y="87.551086">current climate from CHLSEA,</tspan><tspan
+         y="87.551086">current climate from CHLESA,</tspan><tspan
          sodipodi:role="line"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.93889px;font-family:Cabin;-inkscape-font-specification:Cabin;stroke-width:0.264583"
          x="-74.04995"
@@ -1581,7 +1581,7 @@
          style="font-size:4.93889px;stroke-width:0.264583"
          x="164.96017"
          y="73.110413"
-         id="tspan14165">neural net</tspan></text>
+         id="tspan14165">interaction prediction model</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:4.93889px;line-height:1.25;font-family:Urbanist;-inkscape-font-specification:Urbanist;letter-spacing:0px;fill:#92670e;fill-opacity:1;stroke-width:0.264583"
@@ -1644,7 +1644,7 @@
          id="tspan235423">map</tspan></text>
     <g
        id="g106570"
-       transform="translate(-0.45438683,-17.643277)">
+       transform="translate(52.462282,-12.35161)">
       <path
          style="fill:none;fill-opacity:1;stroke:#78c2a4;stroke-width:0.45597;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          d="m -60.781239,228.4675 c -2.979835,-7.13277 -5.938156,-12.47108 -8.460336,-20.11459"
@@ -1842,7 +1842,7 @@
     </g>
     <g
        id="g106543"
-       transform="translate(-0.45438683,-17.643277)">
+       transform="translate(52.462282,-12.35161)">
       <path
          style="fill:#b3e59f;fill-opacity:1;stroke:#b3e59f;stroke-width:0.455253px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
          d="m -52.668247,224.86526 c -0.0074,-0.003 3.10671,-1.11841 3.259714,-0.35574 0.216738,1.08037 -3.259714,0.35574 -3.259714,0.35574 z"
@@ -2066,7 +2066,7 @@
     </g>
     <g
        id="g106511"
-       transform="translate(-0.45438683,-17.643277)">
+       transform="translate(52.462282,-12.35161)">
       <path
          style="fill:#5b88ce;fill-opacity:1;stroke:#5b88ce;stroke-width:0.455253px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
          d="m -32.826877,212.54125 c 0.273284,-0.60209 1.139682,-1.79697 2.192204,-1.7813 1.052523,0.0155 1.390178,1.36647 0.675867,1.60858 -0.714306,0.24206 -2.868071,0.17279 -2.868071,0.17279 z"
@@ -2210,7 +2210,7 @@
     </g>
     <g
        id="g141837"
-       transform="matrix(1.2224477,0,0,1.2224477,-22.652465,-65.808059)">
+       transform="matrix(1.2224477,0,0,1.2224477,30.264203,-60.516392)">
       <path
          style="fill:none;stroke:#a27848;stroke-width:0.565;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          d="m 28.34124,218.4075 -1.312485,0.0165 -0.851593,2.10385 -0.376464,0.73548"
@@ -2353,7 +2353,7 @@
     </g>
     <g
        id="g141772"
-       transform="matrix(1.2224477,0,0,1.2224477,-22.652465,-65.808059)">
+       transform="matrix(1.2224477,0,0,1.2224477,30.264203,-60.516392)">
       <path
          style="fill:none;stroke:#4c3922;stroke-width:0.565;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          d="m 58.859887,218.53588 -1.312485,0.0165 -0.851593,2.10385 -0.376464,0.73548"
@@ -2496,7 +2496,7 @@
     </g>
     <g
        id="g141815"
-       transform="matrix(1.2224477,0,0,1.2224477,-22.652465,-65.808059)">
+       transform="matrix(1.2224477,0,0,1.2224477,30.264203,-60.516392)">
       <path
          style="fill:none;stroke:#c6a580;stroke-width:0.565;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          d="m 42.500865,218.47169 -1.312485,0.0165 -0.851593,2.10385 -0.376464,0.73548"
@@ -2639,27 +2639,27 @@
     </g>
     <path
        style="fill:none;stroke:#8f8f8f;stroke-width:0.865;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m -46.495309,185.34875 v -5.66171 h 17.154393 v 6.18624"
+       d="m 6.4213593,190.64042 v -5.66171 H 23.575752 v 6.18624"
        id="path142065" />
     <path
        style="fill:none;stroke:#8f8f8f;stroke-width:0.865;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m -38.038606,179.60302 v -5.77848 h -26.824876 v 12.31253"
+       d="m 14.878062,184.89469 v -5.77848 h -26.824874 v 12.31253"
        id="path142067" />
     <path
        style="fill:none;stroke:#8f8f8f;stroke-width:0.865;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m -52.688855,170.56041 v 3.26816"
+       d="m 0.22781467,175.85208 v 3.26816"
        id="path142069" />
     <path
        style="fill:none;stroke:#8f8f8f;stroke-width:0.865;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 31.665914,185.34875 v -5.66171 H 14.511521 v 6.18624"
+       d="m 84.582579,190.64042 v -5.66171 H 67.428191 v 6.18624"
        id="path142727" />
     <path
        style="fill:none;stroke:#8f8f8f;stroke-width:0.865;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 23.209211,179.60302 v -5.77848 h 26.824876 v 12.31253"
+       d="m 76.125881,184.89469 v -5.77848 h 26.824879 v 12.31253"
        id="path142729" />
     <path
        style="fill:none;stroke:#8f8f8f;stroke-width:0.865;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 37.859459,170.56041 v 3.26816"
+       d="m 90.776126,175.85208 v 3.26816"
        id="path142731" />
     <g
        id="g143623"

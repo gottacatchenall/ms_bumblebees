@@ -8,10 +8,11 @@ both the spatial and temporal distribution of species.
 Ecosystems are composed of interactions between species.
 
 
-
-
-
-Species vary in spacem but also
+Main idea here: we have interaction information for some subset of the
+species pool, and good SDMs for a different subset of the species
+pool. There is some overlap in these species poolsHow do we combine
+this to predict: species interactions, uncertainty in interactions
+(which as increases indicates better use of sampling time).
 
 Species interactions and climate change.
 
@@ -139,16 +140,23 @@ distribution-predictor that incorporate time into predictions
 
 ##  Figure three: Climate  
 
-Much as climate change has shifted temperature gradients to get warmer toward
-the poles, it has also moved temperature gradients up in elevation.
+Much as climate change has shifted temperature gradients to get warmer
+toward the poles, it has also moved temperature gradients up in
+elevation.
 
-We can get a CMIP6 forecast of temperature and precipitation, and then predict
-how many observed interactions in the field data will no longer have their
-composing species’ distributions overlap. Decompose temporal component of
-overlap from spatial component.
+We can get a CMIP6 forecast of temperature and precipitation, and then
+predict how many observed interactions in the field data will no
+longer have their composing species’ distributions overlap. Decompose
+temporal component of overlap from spatial component.
 
 
 # Discussion
+
+This predictive model should not be used as definitive prediction:
+instead it reveals gaps in our sampling (where we have little
+confidence  in predictions---see uncertainty figure).
+Iterative forecasting [@Diteze]: use this model to guide sampling in
+the future to validate and update the model, etc.
 
 
 ## Acknowledgements
