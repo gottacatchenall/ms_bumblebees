@@ -10,7 +10,7 @@ Ecosystems are composed of interactions between species.
 
 Main idea here: we have interaction information for some subset of the
 species pool, and good SDMs for a different subset of the species
-pool. There is some overlap in these species poolsHow do we combine
+pool. There is some overlap in these species pools. How do we combine
 this to predict: species interactions, uncertainty in interactions
 (which as increases indicates better use of sampling time).
 
@@ -23,7 +23,7 @@ Two dimensions: spatial and temporal.
 - apply this to elevation gradients
 - dispersal capacity and range shifts
 
-2) Phenological uncoupling [@Olesen2011MisFor].
+2) Phenological and spatial uncoupling [@Olesen2011MisFor].
 - Abundance is a function of time in the year
 
 In this paper we.... combine data from a variety of sources: field
