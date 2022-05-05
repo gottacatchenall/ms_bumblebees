@@ -269,82 +269,31 @@
         </section>
         
         <article>
+            <h2 id="abstract">Abstract</h2>
+            <p>Using a data set of [DESCRIBE EACH DATASET IN A NICE WAY], we predict a spatiotemporally explicit metaweb of interactions between bumblebees (<em>Bombus</em>) and wildflowers (within <em>find clade</em>). We integrate this data with crowdsourced occurrence data and climate data to [best paint the picture of the Colorado bumblebee-plant metaweb]. Using temporal climate data, we forecast how the spatiotemporal overlap of interacting species will change under proposed climate scenarios. We use this to estimate what interactions between bees and plants need the most attention to prevent the spatiotemporal decoupling of an interactions from threatening ecosystem functioning or the persistence of a species.</p>
             <h1 id="introduction">Introduction</h1>
-            <p>Earth’s ecosystems are subject to rapid change due to both climate and land-use change <span class="citation" data-cites="cite">(<strong>cite?</strong>)</span>. These sudden shifts in environment alter both the spatial and temporal distribution of species.</p>
-            <p>Ecosystems are composed of interactions between species.</p>
-            <p>Main idea here: we have interaction information for some subset of the species pool, and good SDMs for a different subset of the species pool. There is some overlap in these species pools. How do we combine this to predict: species interactions, uncertainty in interactions (which as increases indicates better use of sampling time).</p>
-            <p>Species interactions and climate change.</p>
-            <p>Two dimensions: spatial and temporal.</p>
-            <ol type="1">
-            <li>Elevation gradients.</li>
-            </ol>
             <ul>
-            <li>range shifts in latitude context</li>
-            <li>apply this to elevation gradients</li>
-            <li>dispersal capacity and range shifts</li>
+            <li>We estimate the Colorado bumblebee/wild-flower pollination metaweb using network embedding.</li>
+            <li>Then decompose into spatial and temporally explicit network predictions</li>
+            <li>Finally suggest a priority of sampling to improve our understanding of this system.</li>
             </ul>
-            <ol start="2" type="1">
-            <li>Phenological and spatial uncoupling <span class="citation" data-cites="Olesen2011MisFor">(Olesen <em>et al.</em> 2011)</span>.</li>
-            </ol>
-            <ul>
-            <li>Abundance is a function of time in the year</li>
-            </ul>
-            <p>In this paper we…. combine data from a variety of sources: field data from several sites, crowd-sourced data (GBIF), and remotely-sensed data. to produce a <em>spatially and temporally explict</em> metaweb of bumblebee-flower interactions across Colorado. We then estimate the change in spatial and temporal overlap over time using the CMIP6 climate consensus forecast <span class="citation" data-cites="Karger2017CliHig">(Karger <em>et al.</em> 2017)</span>.</p>
+            <h1 id="data">Data</h1>
             <h1 id="methods">Methods</h1>
-            <figure>
-            <img src="./figures/concept_v2.png" id="fig:concept" alt="Figure 1: todo" /><figcaption aria-hidden="true">Figure 1: todo</figcaption>
-            </figure>
-            <h2 id="data">Data</h2>
-            <p>This project involves assembly and integration of data from a variety of (both structured and unstructured) sources. This data can be divided into four categories: field data, GBIF data, remote-sensing data, and phylogenetic data.</p>
-            <h3 id="field-data">Field data</h3>
-            <p>The field data consists of: (1) a seven year data-set from Rocky Mountain Biological Laboratory, consisting of season-long interaction and phenology data six plots along an elevation gradient. (2) a similar six year data set from Elk Meadows, CO, and (3) a year across a large elevation gradient at Pikes Peak.</p>
-            <p>Additional in-situ environmental sensors.</p>
-            <p>The partitioning of this data into training, test, and validation sets if described in the <em>Models</em> section.</p>
-            <h3 id="gbif-data">GBIF data</h3>
-            <p>The data from Global Biodiversity Information Facility (GBIF) itself comes in two forms: (1) spatial records of bumblebee and flower records (2) sparsely available records of the plants a bee was observed on (TODO details from Julian).</p>
-            <h3 id="remote-sensing-data">Remote-sensing data</h3>
-            <p>The remote-sensing data consists of 15-arcsecond elevation data<span class="citation" data-cites="GMTED2020">(<strong>GMTED2020?</strong>, cite)</span>, and daily 1km resolution precipitation and temperature from CHELSA <span class="citation" data-cites="Karger2021GloDai">(Karger <em>et al.</em> 2021)</span>.</p>
-            <h3 id="phylogenic-data">Phylogenic data</h3>
-            <p>The phylogenetic data consists of genomic barcodes available from NCBI GenBank.</p>
-            <h2 id="a-spatiotemporally-explicit-predictive-metaweb-model">A spatiotemporally explicit predictive metaweb model</h2>
-            <p>What does it mean for it to be “spatiotemporally explicit?” Well the formal definition of a metaweb is total species pool and</p>
-            <p>We denote the predicted probability of two species, <span class="math inline"><em>i</em></span> and <span class="math inline"><em>j</em></span>, interacting a <span class="math inline"><em>p</em><sub><em>i</em><em>j</em></sub></span>. The outcome is here is to build a model <span class="math inline"><em>f</em></span>, or rather a set of candidate models, that take <span class="math inline"><em>i</em></span> and <span class="math inline"><em>j</em></span> and inputs, and which potentially combine this with .features</p>
-            <p><span class="math display"><em>p</em><sub><em>i</em><em>j</em></sub> = <em>f</em>(<em>i</em>, <em>j</em>)</span></p>
-            <h3 id="candidate-models">Candidate models</h3>
-            <p><strong><em>True Neutral</em></strong>: <span class="math inline">$f(i,j) = \frac{1}{\sum_i \sum_j 1} = 1 / (P\cdot F)$</span></p>
-            <p><strong><em>Relative-abundance (interaction neutral)</em></strong>: <span class="math inline"><em>f</em>(<em>i</em>, <em>j</em>) = <em>A</em><sub><em>i</em></sub><em>A</em><sub><em>j</em></sub></span> where <span class="math inline"><em>A</em><sub><em>x</em></sub></span> is the relative abundance of species <span class="math inline"><em>x</em></span>.</p>
-            <p><strong><em>Relative-abundance + environment-embedding</em></strong>: <span class="math inline"><em>f</em>(<em>i</em>, <em>j</em>) = <em>g</em>(<em>i</em>, <em>j</em>, <em>E</em><sub><em>i</em></sub>, <em>E</em><sub><em>j</em></sub>)</span></p>
-            <p><strong><em>Relative-abundance + phylogeny-embedding</em></strong>: $$</p>
-            <p><strong><em>Relative-abundance + environment-embedding + phylogeny-embedding</em></strong></p>
-            <p>In gravel et al 2017 <span class="math display"><em>P</em>(<em>X</em><sub><em>i</em><em>y</em></sub>, <em>X</em><sub><em>j</em><em>y</em></sub>, <em>L</em><sub><em>i</em><em>j</em><em>y</em></sub>|<em>E</em><sub><em>y</em></sub>) = <em>P</em>(<em>X</em><sub><em>i</em><em>y</em></sub>, <em>X</em><sub><em>j</em><em>y</em></sub><em>P</em>(<em>L</em><sub><em>i</em><em>j</em><em>y</em></sub>|<em>X</em><sub><em>i</em><em>y</em></sub>, <em>X</em><sub><em>j</em><em>y</em></sub>, <em>E</em><sub><em>y</em></sub>)</span> Then decompose probability of co-occurence as <span class="math display"><em>P</em>(<em>X</em><sub><em>i</em><em>y</em></sub>, <em>X</em><sub><em>j</em><em>y</em></sub>) = <em>P</em>(<em>X</em><sub><em>i</em><em>y</em></sub>)<em>P</em>(<em>X</em><sub><em>j</em><em>y</em></sub>)</span></p>
-            <h2 id="model-fitting-and-validation">Model fitting and validation</h2>
-            <p>Models are implemented and fitted in Julia v1.6, using Turing.jl [cite]</p>
-            <h3 id="training-test-validation-split-scheme">Training-test-validation split scheme</h3>
-            <p>How do this? Do we remove sites entirely? Years entirely? Perhaps pikes peak would be best as a validation set as its only one year anyway and is a larger elevation gradient.</p>
-            <h1 id="results">Results</h1>
-            <p>After comparing different combinations of features/model structures and finding the ‘best’ performing model on validation data.</p>
-            <h2 id="figure-one-spatial-species-pool-and-network-prediction">Figure one: spatial species pool and network prediction</h2>
-            <p>Figure that is two panels: a map of total species richness and a map of network properties across Colorado. This model doesn’t consider time, only other predictors.</p>
-            <h2 id="figure-two-phenology">Figure two: Phenology</h2>
-            <p>Same as figure one but consists of maps but at different times of the year (e.g. March, June, August) and uses both an interaction-predictor and distribution-predictor that incorporate time into predictions</p>
-            <h2 id="figure-three-climate">Figure three: Climate</h2>
-            <p>Much as climate change has shifted temperature gradients to get warmer toward the poles, it has also moved temperature gradients up in elevation.</p>
-            <p>We can get a CMIP6 forecast of temperature and precipitation, and then predict how many observed interactions in the field data will no longer have their composing species’ distributions overlap. Decompose temporal component of overlap from spatial component.</p>
+            <p><strong><em>Concept Fig</em></strong></p>
+            <h1 id="metaweb-model">Metaweb Model</h1>
+            <h2 id="phylogeny-construction">Phylogeny Construction</h2>
+            <h2 id="feature-embedding">Feature Embedding</h2>
+            <h3 id="relative-abundance">Relative Abundance</h3>
+            <h3 id="phylogenetic-features">Phylogenetic features</h3>
+            <h3 id="environmental-niche-features">Environmental niche features</h3>
+            <h3 id="temporal-niche-features">Temporal niche features</h3>
+            <h2 id="metaweb-model-fitting-and-validation">Metaweb Model Fitting and Validation</h2>
+            <p><strong><em>Figure 2: Model Fit Figure</em></strong> <img src="./figures/PR_ROC.png" /> # Spatiotemporally Explicit Networks</p>
+            <p>Now that we have a metaweb…..</p>
+            <p><strong><em>Figure 3: Maps over time figure and Prob(Connectance) vs. Month figure </em></strong></p>
+            <h1 id="sampling-prioiritization">Sampling Prioiritization</h1>
+            <p><strong><em>Figure 4: Uncertainty and sampling priority map</em></strong></p>
             <h1 id="discussion">Discussion</h1>
-            <p>This predictive model should not be used as definitive prediction: instead it reveals gaps in our sampling (where we have little confidence in predictions—see uncertainty figure). Iterative forecasting <span class="citation" data-cites="Diteze">(<strong>Diteze?</strong>)</span>: use this model to guide sampling in the future to validate and update the model, etc.</p>
-            <h2 id="acknowledgements">Acknowledgements</h2>
-            <h1 class="unnumbered" id="references">References</h1>
-            <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
-            <div id="ref-Karger2017CliHig" class="csl-entry" role="doc-biblioentry">
-            Karger, D.N., Conrad, O., Böhner, J., Kawohl, T., Kreft, H., Soria-Auza, R.W., <em>et al.</em> (2017). Climatologies at high resolution for the earth’s land surface areas. <em>Scientific Data</em>, 4, 170122.
-            </div>
-            <div id="ref-Karger2021GloDai" class="csl-entry" role="doc-biblioentry">
-            Karger, D.N., Wilson, A.M., Mahony, C., Zimmermann, N.E. &amp; Jetz, W. (2021). Global daily 1km land surface precipitation based on cloud cover-informed downscaling. <em>arXiv:2012.10108 [physics]</em>.
-            </div>
-            <div id="ref-Olesen2011MisFor" class="csl-entry" role="doc-biblioentry">
-            Olesen, J.M., Bascompte, J., Dupont, Y.L., Elberling, H., Rasmussen, C. &amp; Jordano, P. (2011). Missing and forbidden links in mutualistic networks. <em>Proceedings of the Royal Society B: Biological Sciences</em>, 278, 725–732.
-            </div>
-            </div>
         </article>
     </main>
 
