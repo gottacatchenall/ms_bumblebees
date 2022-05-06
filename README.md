@@ -14,13 +14,43 @@ of a species.
 
 # Introduction
 
-- We estimate the Colorado bumblebee/wild-flower pollination metaweb
-using network embedding.
-- Then decompose into spatial and temporally explicit network predictions
-- Finally suggest a priority of sampling to improve our understanding of this system.
+Species interactions are important. It is ultimately interactions
+between individuals of different species that drive the structure,
+dynamics, and persistence of ecosystems, and the abundance and
+diversity of the species within them.
+Plant-pollinator interactions specifically drive the function and
+ persistence of "architecture of biodiversity" [@Bascompte2007PlaMut].
+ However, we are far from a robust understanding of plant-pollinator
+ networks is.
+
+In this paper, we combine several datasets, each spanning several
+years, to produce spatially and temporally explicit predictions of
+_Bombus_ plant-pollinator interactions across the state of Colorado.
+
+We do this in two parts: (1) metaweb prediction and (2) conditioning
+our metaweb prediction on co-occurrence probability.
+
+First, we build a model to predict the metaweb---the network of _all_
+interactions, aggregated across all times and spatial locations---of
+_Bombus_ and wildflower species across Colorado. (Why do this? The
+metaweb is more predictable than local interactions.) We do this using
+network embedding [@cite]. Network embedding takes each node in the
+network (either a bumblebee or a wildflower) and represents it in a
+latent $n$ dimensional space. Combination of running models on
+Temporal niche (T), Phylogenetic niche (P), Environmental niche (E),
+and relative abundance in community (RA).
+
+Second, we then use this metaweb to predict the structure of networks
+at specific locations and times of year [@Gravel2019BriElt].
+
+
+Finally we suggest a map of sampling priority, which
+suggests the locations to sample that will best improve our understanding
+of the Colorado _Bombus_ pollination metaweb.
 
 # Data
 
+We use three separate datasets to estimate the Colorado _Bombus_ metaweb.
 
 # Methods
 
@@ -43,7 +73,8 @@ using network embedding.
 ## Metaweb Model Fitting and Validation
 
 ***Figure 2: Model Fit Figure***
-![](./figures/PR_ROC.png)
+![todo](./figures/PR_ROC.png)
+
 # Spatiotemporally Explicit Networks
 
 Now that we have a metaweb.....
