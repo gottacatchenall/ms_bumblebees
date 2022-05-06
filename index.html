@@ -282,17 +282,18 @@
             </figure>
             <h1 id="metaweb-model">Metaweb Model</h1>
             <h2 id="feature-embedding">Feature Embedding</h2>
-            <h3 id="relative-abundance">Relative Abundance</h3>
+            <h3 id="environmental-niche-features">Environmental niche features</h3>
+            <p>We take the 19 BioClim layers from CHELSA (cite; 1km resolution) and a map of elevation and PCA them. A resulting 4 layers cover 99.5% of the variance. We use species occurrence data from GBIF, and consider each occurrence record as a point in environment space. Then we fit a multivariate normal distribution to these points in environmental space.</p>
+            <h3 id="temporal-niche-features">Temporal niche features</h3>
+            <p>We take the mean and variance of the distribution of number of observations per week of year in the interaction field data.</p>
             <h3 id="phylogenetic-features">Phylogenetic features</h3>
             <h4 id="phylogeny-construction">Phylogeny Construction</h4>
             <p>We construct phylogenies for both <em>Bombus</em> and wildflower species using barcode markers, mitochondrial COI and chloroplast rbcL, respectively. These sequences were obtained from NCBI GenBank for all species. For species for which no sequence was available (only a handful of plants), their was substituted with a barcode from a member of the same genus. Justify why this is fine here.</p>
             <p>These sequences were aligned using ClustalOmega v???, and then a posterior distribution of phylogenies and consensus tree was obtained via MrBayes v??, using XX substition model with gamma-distributed rates. Run until convergence, which here we define as the standard-deviation of splits falling below 0.1.</p>
             <h4 id="creating-an-embedding-from-phylogenies">Creating an embedding from phylogenies</h4>
-            <p>We simulate traits.</p>
-            <h3 id="environmental-niche-features">Environmental niche features</h3>
-            <p>We take the 19 BioClim layers from CHELSA (cite; 1km resolution) and a map of elevation and PCA them. A resulting 4 layers cover 99.5% of the variance. We use species occurrence data from GBIF, and consider each occurrence record as a point in environment space. Then we fit a multivariate normal distribution to these points in environmental space.</p>
-            <h3 id="temporal-niche-features">Temporal niche features</h3>
-            <p>We take the mean and variance of the distribution of number of observations per week of year in the interaction field data.</p>
+            <p>We simulate traits. Relationship between number of traits, num output PCA dimensions, and number of used dimensions in the model matter. Describe how that works.</p>
+            <h3 id="relative-abundance">Relative Abundance</h3>
+            <p>This embedding is the simplest.</p>
             <h2 id="metaweb-model-fitting-and-validation">Metaweb Model Fitting and Validation</h2>
             <p>We fit a bunch of models using MLJ.jl.</p>
             <p>Some of them are bagged, some are not bagged.</p>
@@ -300,12 +301,13 @@
             <figure>
             <img src="./figures/PR_ROC.png" id="fig:prroc" alt="Figure 1: todo" /><figcaption aria-hidden="true">Figure 1: todo</figcaption>
             </figure>
-            <p>What does this tell us? The ensemble model is regularlly the best for ROC, but not for PR. This illustrates a tradeoff between models being as “right” as possible versus a model being useful for discovering false-negatives.</p>
+            <p>What does this tell us? The ensemble model is regularly the best for ROC, but not for PR. This illustrates an inherent trade-off between models being as “right” as possible versus a model being useful for discovering false-negatives.</p>
             <h1 id="spatiotemporally-explicit-networks">Spatiotemporally Explicit Networks</h1>
-            <p>Now that we have a metaweb, we can extend this to predict interactions at partilar places and times by decomposing the probability of interaction at particular place and time into probability of interaction times probability of cooccurrence via properties of conditional prob. <span class="citation" data-cites="Gravel2019BriElt">(Gravel <em>et al.</em> 2019)</span></p>
-            <p><span class="math inline"><em>P</em>(<em>A</em><sub><em>i</em><em>j</em></sub>)<em>P</em>(<em>O</em><sub><em>i</em><em>j</em></sub>)</span> vs <span class="math inline"><em>P</em>(<em>A</em><sub><em>i</em><em>j</em></sub>)<em>P</em>(<em>O</em><sub><em>i</em></sub>)<em>P</em>(<em>O</em><sub><em>j</em></sub>)</span></p>
+            <p>Now that we have a metaweb, we can extend this to predict interactions at particular places and times by decomposing the probability of interaction at particular place and time into probability of interaction multiplied by probability of co-occurrence via properties of conditional probability <span class="citation" data-cites="Gravel2019BriElt">(Gravel <em>et al.</em> 2019)</span>.</p>
+            <p>How do we define? <span class="math inline"><em>P</em>(<em>i</em> ↔︎ <em>j</em>)</span> Is it <span class="math inline"><em>P</em>(<em>A</em><sub><em>i</em><em>j</em></sub>)<em>P</em>(<em>O</em><sub><em>i</em><em>j</em></sub>)</span> or <span class="math inline"><em>P</em>(<em>A</em><sub><em>i</em><em>j</em></sub>)<em>P</em>(<em>O</em><sub><em>i</em></sub>)<em>P</em>(<em>O</em><sub><em>j</em></sub>)</span></p>
             <p><strong><em>Figure 3: Maps over time figure and Prob(Connectance) vs. Month figure</em></strong></p>
             <h1 id="sampling-prioiritization">Sampling Prioiritization</h1>
+            <p>How do we improve out udnerstanding of this pollination network, or determine if it is changing over time?</p>
             <p><strong><em>Figure 4: Uncertainty and sampling priority map</em></strong></p>
             <h1 class="unnumbered" id="discussion">Discussion</h1>
             <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
