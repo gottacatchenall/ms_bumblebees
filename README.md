@@ -64,7 +64,7 @@ metaweb.
 ![todo](./figures/concept.png)
 
 
-# Metaweb Model
+# Predicting the metaweb
 
 
 ## Feature Embedding
@@ -125,25 +125,30 @@ models being as "right" as possible versus a model being useful for
 discovering false-negatives.
 
 
-# Spatiotemporally Explicit Networks
+# Predicting networks in space and time
 
 Now that we have a metaweb, we can extend this to predict interactions
 at particular places and times by decomposing the probability of
 interaction at particular place and time into probability of
-interaction multiplied by probability of co-occurrence via properties of
-conditional probability [@Gravel2019BriElt].
+interaction multiplied by probability of co-occurrence via properties
+of conditional probability [@Gravel2019BriElt].
 
 How do we define? $P(i \leftrightarrow j)$ Is it $P(A_{ij})P(O_{ij})$ or $P(A_{ij})P(O_i)P(O_j)$
 
 ***Figure 3: Maps over time figure and Prob(Connectance) vs. Month figure***
 
 
-# Sampling Prioiritization
+# Prioritizing spatial sampling of pollinator interactions
 
-How do we improve out udnerstanding of this pollination network,
+How do we improve out understanding of this pollination network,
 or determine if it is changing over time?
 
 ***Figure 4: Uncertainty and sampling priority map***
 
 
 # Discussion
+
+
+We predict things alright. Emphasizes how heterogenous data sources
+can improve interaction prediction (rocpr fig). Advances network embedding
+as a framework for prediction of species interaction networks.
