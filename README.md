@@ -69,7 +69,19 @@ metaweb.
 
 ## Feature Embedding
 
-### Relative Abundance
+### Environmental niche features
+
+We take the 19 BioClim layers from CHELSA (cite; 1km resolution) and a
+map of elevation and PCA them. A resulting 4 layers cover 99.5% of the
+variance. We use species occurrence data from GBIF, and consider each
+occurrence record as a point in environment space. Then we fit a
+multivariate normal distribution to these points in environmental
+space.
+
+### Temporal niche features
+
+We take the mean and variance of the distribution of number of
+observations per week of year in the interaction field data.
 
 ### Phylogenetic features
 
@@ -90,21 +102,12 @@ standard-deviation of splits falling below 0.1.
 
 #### Creating an embedding from phylogenies
 
-We simulate traits.
+We simulate traits. Relationship between number of traits, num output PCA dimensions,
+and number of used dimensions in the model matter. Describe how that works.
 
-### Environmental niche features
+### Relative Abundance
 
-We take the 19 BioClim layers from CHELSA (cite; 1km resolution) and a
-map of elevation and PCA them. A resulting 4 layers cover 99.5% of the
-variance. We use species occurrence data from GBIF, and consider each
-occurrence record as a point in environment space. Then we fit a
-multivariate normal distribution to these points in environmental
-space.
-
-### Temporal niche features
-
-We take the mean and variance of the distribution of number of
-observations per week of year in the interaction field data.
+This embedding is the simplest.
 
 ## Metaweb Model Fitting and Validation
 
@@ -116,26 +119,29 @@ AUC-ROC and AUC-PR values below in @fig:prroc
 
 ![todo](./figures/PR_ROC.png){#fig:prroc}
 
-What does this tell us? The ensemble model is regularlly the best for
-ROC, but not for PR. This illustrates a tradeoff between models being as
-"right" as possible versus a model being useful for discovering false-negatives.
+What does this tell us? The ensemble model is regularly the best for
+ROC, but not for PR. This illustrates an inherent trade-off between
+models being as "right" as possible versus a model being useful for
+discovering false-negatives.
 
 
 # Spatiotemporally Explicit Networks
 
 Now that we have a metaweb, we can extend this to predict interactions
-at partilar places and times by decomposing the probability of
+at particular places and times by decomposing the probability of
 interaction at particular place and time into probability of
-interaction times probability of cooccurrence via properties of conditional prob.
-[@Gravel2019BriElt]
+interaction multiplied by probability of co-occurrence via properties of
+conditional probability [@Gravel2019BriElt].
 
-$P(A_{ij})P(O_{ij})$ vs $P(A_{ij})P(O_i)P(O_j)$
+How do we define? $P(i \leftrightarrow j)$ Is it $P(A_{ij})P(O_{ij})$ or $P(A_{ij})P(O_i)P(O_j)$
 
 ***Figure 3: Maps over time figure and Prob(Connectance) vs. Month figure***
 
 
 # Sampling Prioiritization
 
+How do we improve out udnerstanding of this pollination network,
+or determine if it is changing over time?
 
 ***Figure 4: Uncertainty and sampling priority map***
 
