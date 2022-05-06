@@ -31,12 +31,12 @@
      fit-margin-left="0"
      fit-margin-right="0"
      fit-margin-bottom="0"
-     inkscape:zoom="0.5"
-     inkscape:cx="717.07602"
-     inkscape:cy="1583.0726"
-     inkscape:window-width="2695"
+     inkscape:zoom="1"
+     inkscape:cx="799.92748"
+     inkscape:cy="1521.0393"
+     inkscape:window-width="2694"
      inkscape:window-height="1458"
-     inkscape:window-x="2273"
+     inkscape:window-x="2274"
      inkscape:window-y="150"
      inkscape:window-maximized="0"
      inkscape:current-layer="layer1" />
@@ -1341,15 +1341,15 @@
     <text
        xml:space="preserve"
        style="font-size:5.64444px;line-height:1.25;font-family:Urbanist;-inkscape-font-specification:Urbanist;letter-spacing:0px;stroke-width:0.221956"
-       x="-97.570351"
-       y="5.9998951"
+       x="-45.20546"
+       y="-187.73134"
        id="text8403"
-       transform="scale(0.98300049,1.0172935)"><tspan
+       transform="matrix(0,-0.98300049,1.0172935,0,0,0)"><tspan
          sodipodi:role="line"
          id="tspan8401"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:Roboto;-inkscape-font-specification:Roboto;stroke-width:0.221956"
-         x="-97.570351"
-         y="5.9998951">Phylogenetic Embedding</tspan></text>
+         x="-45.20546"
+         y="-187.73134">Phylogenetic</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:9.87778px;line-height:1.25;font-family:Cabin;-inkscape-font-specification:Cabin;text-align:center;letter-spacing:0px;text-anchor:middle;stroke-width:0.264583"
@@ -2673,15 +2673,15 @@
     <text
        xml:space="preserve"
        style="font-size:5.64444px;line-height:1.25;font-family:Urbanist;-inkscape-font-specification:Urbanist;letter-spacing:0px;stroke-width:0.221956"
-       x="-98.337288"
-       y="64.183121"
+       x="-109.88097"
+       y="-188.6535"
        id="text43521"
-       transform="scale(0.98300049,1.0172935)"><tspan
+       transform="matrix(0,-0.98300049,1.0172935,0,0,0)"><tspan
          sodipodi:role="line"
          id="tspan43519"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:Roboto;-inkscape-font-specification:Roboto;stroke-width:0.221956"
-         x="-98.337288"
-         y="64.183121">Relative Abundance Embedding</tspan></text>
+         x="-109.88097"
+         y="-188.6535">Relative Abundance</tspan></text>
     <g
        id="g43573"
        transform="matrix(0.7142091,0,0,0.62878683,-28.843909,-57.66574)">
@@ -3358,27 +3358,29 @@
     <text
        xml:space="preserve"
        style="font-size:5.64444px;line-height:1.25;font-family:Urbanist;-inkscape-font-specification:Urbanist;letter-spacing:0px;stroke-width:0.221956"
-       x="-98.51506"
-       y="122.3988"
+       x="-180.96576"
+       y="-189.62909"
        id="text45603"
-       transform="scale(0.98300049,1.0172935)"><tspan
+       transform="matrix(0,-0.98300049,1.0172935,0,0,0)"><tspan
          sodipodi:role="line"
          id="tspan45601"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:Roboto;-inkscape-font-specification:Roboto;stroke-width:0.221956"
-         x="-98.51506"
-         y="122.3988">Environment Niche Embedding</tspan></text>
+         x="-180.96576"
+         y="-189.62909">Environmental Niche</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:5.64444px;line-height:1.25;font-family:Urbanist;-inkscape-font-specification:Urbanist;letter-spacing:0px;stroke-width:0.221956"
-       x="-98.334717"
-       y="190.48395"
+       x="-241.30779"
+       y="-182.58011"
        id="text48352"
-       transform="scale(0.98300049,1.0172935)"><tspan
+       transform="matrix(0.03681024,-0.98231102,1.01658,0.0380944,0,0)"
+       inkscape:transform-center-x="-16.86935"
+       inkscape:transform-center-y="-25.215397"><tspan
          sodipodi:role="line"
          id="tspan48350"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444px;font-family:Roboto;-inkscape-font-specification:Roboto;stroke-width:0.221956"
-         x="-98.334717"
-         y="190.48395">Temporal Niche Embedding</tspan></text>
+         x="-241.30779"
+         y="-182.58011">Temporal Niche </tspan></text>
     <text
        xml:space="preserve"
        style="font-size:5.64444px;line-height:1.25;font-family:Urbanist;-inkscape-font-specification:Urbanist;letter-spacing:0px;stroke-width:0.221956"
@@ -11379,5 +11381,9 @@
         </g>
       </g>
     </g>
+    <path
+       style="fill:none;stroke:#555555;stroke-width:0.26499999;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:0.52999997,0.26499999;stroke-dashoffset:0"
+       d="m -91.528195,239.05617 47.416883,-27.78471"
+       id="path404002" />
   </g>
 </svg>

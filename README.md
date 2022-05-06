@@ -152,3 +152,9 @@ or determine if it is changing over time?
 We predict things alright. Emphasizes how heterogenous data sources
 can improve interaction prediction (rocpr fig). Advances network embedding
 as a framework for prediction of species interaction networks.
+
+
+Embedding is a good tool for x. How do we select the dimensionality
+of our predictors? [Paper on ecological dimensionality]. But this
+doesn't mean 7-dimensions is adaquete to describe our predictors
+in models to predict species interactions.  
