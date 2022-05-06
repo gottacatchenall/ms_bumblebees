@@ -280,7 +280,7 @@
             <figure>
             <img src="./figures/concept.png" alt="todo" /><figcaption aria-hidden="true">todo</figcaption>
             </figure>
-            <h1 id="metaweb-model">Metaweb Model</h1>
+            <h1 id="predicting-the-metaweb">Predicting the metaweb</h1>
             <h2 id="feature-embedding">Feature Embedding</h2>
             <h3 id="environmental-niche-features">Environmental niche features</h3>
             <p>We take the 19 BioClim layers from CHELSA (cite; 1km resolution) and a map of elevation and PCA them. A resulting 4 layers cover 99.5% of the variance. We use species occurrence data from GBIF, and consider each occurrence record as a point in environment space. Then we fit a multivariate normal distribution to these points in environmental space.</p>
@@ -302,14 +302,15 @@
             <img src="./figures/PR_ROC.png" id="fig:prroc" alt="Figure 1: todo" /><figcaption aria-hidden="true">Figure 1: todo</figcaption>
             </figure>
             <p>What does this tell us? The ensemble model is regularly the best for ROC, but not for PR. This illustrates an inherent trade-off between models being as “right” as possible versus a model being useful for discovering false-negatives.</p>
-            <h1 id="spatiotemporally-explicit-networks">Spatiotemporally Explicit Networks</h1>
+            <h1 id="predicting-networks-in-space-and-time">Predicting networks in space and time</h1>
             <p>Now that we have a metaweb, we can extend this to predict interactions at particular places and times by decomposing the probability of interaction at particular place and time into probability of interaction multiplied by probability of co-occurrence via properties of conditional probability <span class="citation" data-cites="Gravel2019BriElt">(Gravel <em>et al.</em> 2019)</span>.</p>
             <p>How do we define? <span class="math inline"><em>P</em>(<em>i</em> ↔︎ <em>j</em>)</span> Is it <span class="math inline"><em>P</em>(<em>A</em><sub><em>i</em><em>j</em></sub>)<em>P</em>(<em>O</em><sub><em>i</em><em>j</em></sub>)</span> or <span class="math inline"><em>P</em>(<em>A</em><sub><em>i</em><em>j</em></sub>)<em>P</em>(<em>O</em><sub><em>i</em></sub>)<em>P</em>(<em>O</em><sub><em>j</em></sub>)</span></p>
             <p><strong><em>Figure 3: Maps over time figure and Prob(Connectance) vs. Month figure</em></strong></p>
-            <h1 id="sampling-prioiritization">Sampling Prioiritization</h1>
-            <p>How do we improve out udnerstanding of this pollination network, or determine if it is changing over time?</p>
+            <h1 id="prioritizing-spatial-sampling-of-pollinator-interactions">Prioritizing spatial sampling of pollinator interactions</h1>
+            <p>How do we improve out understanding of this pollination network, or determine if it is changing over time?</p>
             <p><strong><em>Figure 4: Uncertainty and sampling priority map</em></strong></p>
-            <h1 class="unnumbered" id="discussion">Discussion</h1>
+            <h1 id="discussion">Discussion</h1>
+            <p>We predict things alright. Emphasizes how heterogenous data sources can improve interaction prediction (rocpr fig). Advances network embedding as a framework for prediction of species interaction networks.</p>
             <div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
             <div id="ref-Bascompte2007PlaMut" class="csl-entry" role="doc-biblioentry">
             Bascompte, J. &amp; Jordano, P. (2007). Plant-Animal Mutualistic Networks: The Architecture of Biodiversity. <em>Annual Review of Ecology, Evolution, and Systematics</em>, 38, 567–593.
