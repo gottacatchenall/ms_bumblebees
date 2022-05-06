@@ -116,10 +116,20 @@ AUC-ROC and AUC-PR values below in @fig:prroc
 
 ![todo](./figures/PR_ROC.png){#fig:prroc}
 
+What does this tell us? The ensemble model is regularlly the best for
+ROC, but not for PR. This illustrates a tradeoff between models being as
+"right" as possible versus a model being useful for discovering false-negatives.
+
+
 # Spatiotemporally Explicit Networks
 
-Now that we have a metaweb.....
+Now that we have a metaweb, we can extend this to predict interactions
+at partilar places and times by decomposing the probability of
+interaction at particular place and time into probability of
+interaction times probability of cooccurrence via properties of conditional prob.
+[@Gravel2019BriElt]
 
+$P(A_{ij})P(O_{ij})$ vs $P(A_{ij})P(O_i)P(O_j)$
 
 ***Figure 3: Maps over time figure and Prob(Connectance) vs. Month figure***
 
