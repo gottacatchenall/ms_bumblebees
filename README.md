@@ -66,7 +66,6 @@ metaweb.
 
 # Metaweb Model
 
-## Phylogeny Construction
 
 ## Feature Embedding
 
@@ -74,13 +73,48 @@ metaweb.
 
 ### Phylogenetic features
 
+#### Phylogeny Construction
+
+We construct phylogenies for both _Bombus_ and wildflower species
+using barcode markers, mitochondrial COI and chloroplast rbcL,
+respectively. These sequences were obtained from NCBI GenBank for all
+species. For species for which no sequence was available (only a
+handful of plants), their was substituted with a barcode from a member
+of the same genus. Justify why this is fine here.
+
+These sequences were aligned using ClustalOmega v???, and then a
+posterior distribution of phylogenies and consensus tree was obtained
+via MrBayes v??, using XX substition model with gamma-distributed
+rates. Run until convergence, which here we define as the
+standard-deviation of splits falling below 0.1.  
+
+#### Creating an embedding from phylogenies
+
+We simulate traits.
+
 ### Environmental niche features
+
+We take the 19 BioClim layers from CHELSA (cite; 1km resolution) and a
+map of elevation and PCA them. A resulting 4 layers cover 99.5% of the
+variance. We use species occurrence data from GBIF, and consider each
+occurrence record as a point in environment space. Then we fit a
+multivariate normal distribution to these points in environmental
+space.
 
 ### Temporal niche features
 
+We take the mean and variance of the distribution of number of
+observations per week of year in the interaction field data.
+
 ## Metaweb Model Fitting and Validation
 
-![todo](./figures/PR_ROC.png)
+We fit a bunch of models using MLJ.jl.
+
+Some of them are bagged, some are not bagged.
+
+AUC-ROC and AUC-PR values below in @fig:prroc
+
+![todo](./figures/PR_ROC.png){#fig:prroc}
 
 # Spatiotemporally Explicit Networks
 
