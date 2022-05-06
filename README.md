@@ -23,7 +23,7 @@ biodiversity" [@Bascompte2007PlaMut]. However, we are far from a
 robust understanding of plant-pollinator networks.
 This is because sampling interactions is costly. Interactions vary in
 space and time [@Poisot2015SpeWhy]---particularlly relevent in this
-system [Paul phenology cite]. This is why there is interest in using
+system [@CaraDonna2014ShiFlo]. This is why there is interest in using
 models to predict interactions from sparse data [@Strydom2021].
 In this paper, we combine several datasets, each spanning several
 years, to produce spatially and temporally explicit predictions of the
@@ -61,7 +61,8 @@ metaweb.
 
 # Methods
 
-***Concept Fig***
+![todo](./figures/concept.png)
+
 
 # Metaweb Model
 
