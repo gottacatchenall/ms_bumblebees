@@ -1,5 +1,5 @@
 {
-  "title": "Forecasting the spatio-temporal uncoupling of bumblebee-flower interaction networks",
+  "title": "Building a better metaweb: predicting spatially and temporally explicit alpine plant-pollinator interaction networks",
   "authors": [
     {
       "affiliations": [
@@ -33,9 +33,7 @@
     },
     {
     "affiliations": [
-      "Université de Montréal",
-      "Université de Sherbrooke",
-      "Québec Centre for Biodiversity Sciences"
+      "Rocky Mountain Biological Laboratory"
     ],
     "familyname": "Banville",
     "givennames": "Francis",
@@ -74,16 +72,6 @@
     },
     {
       "affiliations": [
-        "McGill University",
-        "Québec Centre for Biodiversity Sciences"
-      ],
-      "familyname": "Gonzalez",
-      "givennames": "Andrew",
-      "email": "andrew.gonzalez@mcgill.ca",
-      "orcid": "0000-0001-6075-8081"
-    },
-    {
-      "affiliations": [
         "Université de Sherbrooke",
         "Québec Centre for Biodiversity Sciences"
        ],
@@ -107,20 +95,20 @@
         "Université de Montréal",
         "Québec Centre for Biodiversity Sciences"
       ],
-      "familyname": "Poisot",
-      "givennames": "Timothée",
-      "email": "timothee.poisot@umontreal.ca",
-      "orcid": "0000-0002-0735-5184"
+      "familyname": "Strydom",
+      "givennames": "Tanya",
+      "email": "tanya.strydom@umontreal.ca",
+      "orcid": "0000-0001-6067-1349"
     },
     {
       "affiliations": [
         "Université de Montréal",
         "Québec Centre for Biodiversity Sciences"
       ],
-      "familyname": "Strydom",
-      "givennames": "Tanya",
-      "email": "tanya.strydom@umontreal.ca",
-      "orcid": "0000-0001-6067-1349"
+      "familyname": "Poisot",
+      "givennames": "Timothée",
+      "email": "timothee.poisot@umontreal.ca",
+      "orcid": "0000-0002-0735-5184"
     },
     {
       "affiliations": [
@@ -130,6 +118,16 @@
       "givennames": "Julian",
       "email": "jresasco@colorado.edu",
       "orcid": ""
+    },
+    {
+      "affiliations": [
+        "McGill University",
+        "Québec Centre for Biodiversity Sciences"
+      ],
+      "familyname": "Gonzalez",
+      "givennames": "Andrew",
+      "email": "andrew.gonzalez@mcgill.ca",
+      "orcid": "0000-0001-6075-8081"
     }
   ],
   "abstract": {

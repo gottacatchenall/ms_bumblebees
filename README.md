@@ -17,19 +17,21 @@ of a species.
 Species interactions are important. It is ultimately interactions
 between individuals of different species that drive the structure,
 dynamics, and persistence of ecosystems, and the abundance and
-diversity of the species within them.
-Plant-pollinator interactions specifically drive the function and
- persistence of "architecture of biodiversity" [@Bascompte2007PlaMut].
- However, we are far from a robust understanding of plant-pollinator
- networks is.
-
+diversity of the species within them. Plant-pollinator interactions
+specifically drive the function and persistence of "architecture of
+biodiversity" [@Bascompte2007PlaMut]. However, we are far from a
+robust understanding of plant-pollinator networks.
+This is because sampling interactions is costly. Interactions vary in
+space and time [@Poisot2015SpeWhy]---particularlly relevent in this
+system [Paul phenology cite]. This is why there is interest in using
+models to predict interactions from sparse data [@Strydom2021].
 In this paper, we combine several datasets, each spanning several
-years, to produce spatially and temporally explicit predictions of
-_Bombus_ plant-pollinator interactions across the state of Colorado.
+years, to produce spatially and temporally explicit predictions of the
+bumblebee (genus _Bombus_) and wildflower pollination network across
+the state of Colorado.
 
 We do this in two parts: (1) metaweb prediction and (2) conditioning
 our metaweb prediction on co-occurrence probability.
-
 First, we build a model to predict the metaweb---the network of _all_
 interactions, aggregated across all times and spatial locations---of
 _Bombus_ and wildflower species across Colorado. (Why do this? The
@@ -42,15 +44,20 @@ and relative abundance in community (RA).
 
 Second, we then use this metaweb to predict the structure of networks
 at specific locations and times of year [@Gravel2019BriElt].
-
-
 Finally we suggest a map of sampling priority, which
 suggests the locations to sample that will best improve our understanding
 of the Colorado _Bombus_ pollination metaweb.
 
+Why is this good for science, what does this contribute to our
+understanding of plant-pollinator ints, networks, Bombus, predictive
+models, etc.,  and how can these results be useful.
+
 # Data
 
-We use three separate datasets to estimate the Colorado _Bombus_ metaweb.
+We use three separate field datasets to estimate the Colorado _Bombus_
+metaweb.
+
+
 
 # Methods
 
@@ -72,7 +79,6 @@ We use three separate datasets to estimate the Colorado _Bombus_ metaweb.
 
 ## Metaweb Model Fitting and Validation
 
-***Figure 2: Model Fit Figure***
 ![todo](./figures/PR_ROC.png)
 
 # Spatiotemporally Explicit Networks
@@ -80,7 +86,7 @@ We use three separate datasets to estimate the Colorado _Bombus_ metaweb.
 Now that we have a metaweb.....
 
 
-***Figure 3: Maps over time figure and Prob(Connectance) vs. Month figure ***
+***Figure 3: Maps over time figure and Prob(Connectance) vs. Month figure***
 
 
 # Sampling Prioiritization
