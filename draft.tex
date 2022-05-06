@@ -157,8 +157,9 @@ urlcolor=blue}
 \begin{document}
 \raggedright
 \thispagestyle{empty}
-{\Large\bfseries\sffamily Forecasting the spatio-temporal uncoupling of
-bumblebee-flower interaction networks}
+{\Large\bfseries\sffamily Building a better metaweb: predicting
+spatially and temporally explicit alpine plant-pollinator interaction
+networks}
 \vskip 5em
 
 %
@@ -173,7 +174,7 @@ Jane E.\,Ogilvie%
 \,\textsuperscript{3}\quad %
 \href{https://orcid.org/0000-0001-9051-0597}{Francis\,Banville}%
 %
-\,\textsuperscript{5,6,2}\quad %
+\,\textsuperscript{3}\quad %
 \href{https://orcid.org/0000-0002-2151-6693}{Dominique\,Caron}%
 %
 \,\textsuperscript{1,2}\quad %
@@ -183,24 +184,24 @@ Jane E.\,Ogilvie%
 \href{https://orcid.org/0000-0001-9019-0108}{Norma R.\,Forero-Muñoz}%
 %
 \,\textsuperscript{5,2}\quad %
-\href{https://orcid.org/0000-0001-6075-8081}{Andrew\,Gonzalez}%
-%
-\,\textsuperscript{1,2}\quad %
 \href{https://orcid.org/0000-0002-4498-7076}{Dominique\,Gravel}%
 %
 \,\textsuperscript{6,2}\quad %
 \href{https://orcid.org/0000-0002-6004-4027}{Laura\,Pollock}%
 %
 \,\textsuperscript{1,2}\quad %
-\href{https://orcid.org/0000-0002-0735-5184}{Timothée\,Poisot}%
+\href{https://orcid.org/0000-0001-6067-1349}{Tanya\,Strydom}%
 %
 \,\textsuperscript{5,2}\quad %
-\href{https://orcid.org/0000-0001-6067-1349}{Tanya\,Strydom}%
+\href{https://orcid.org/0000-0002-0735-5184}{Timothée\,Poisot}%
 %
 \,\textsuperscript{5,2}\quad %
 Julian\,Resasco%
 %
-\,\textsuperscript{7}
+\,\textsuperscript{7}\quad %
+\href{https://orcid.org/0000-0001-6075-8081}{Andrew\,Gonzalez}%
+%
+\,\textsuperscript{1,2}
 
 \textsuperscript{1}\,McGill University\quad \textsuperscript{2}\,Québec
 Centre for Biodiversity Sciences\quad \textsuperscript{3}\,Rocky
@@ -262,38 +263,43 @@ dynamics, and persistence of ecosystems, and the abundance and diversity
 of the species within them. Plant-pollinator interactions specifically
 drive the function and persistence of ``architecture of biodiversity''
 (Bascompte \& Jordano 2007). However, we are far from a robust
-understanding of plant-pollinator networks is.
-
-In this paper, we combine several datasets, each spanning several years,
-to produce spatially and temporally explicit predictions of
-\emph{Bombus} plant-pollinator interactions across the state of
-Colorado.
+understanding of plant-pollinator networks. This is because sampling
+interactions is costly. Interactions vary in space and time (Poisot
+\emph{et al.} 2015)---particularlly relevent in this system {[}Paul
+phenology cite{]}. This is why there is interest in using models to
+predict interactions from sparse data (\textbf{Strydom2021?}). In this
+paper, we combine several datasets, each spanning several years, to
+produce spatially and temporally explicit predictions of the bumblebee
+(genus \emph{Bombus}) and wildflower pollination network across the
+state of Colorado.
 
 We do this in two parts: (1) metaweb prediction and (2) conditioning our
-metaweb prediction on co-occurrence probability.
-
-First, we build a model to predict the metaweb---the network of
-\emph{all} interactions, aggregated across all times and spatial
-locations---of \emph{Bombus} and wildflower species across Colorado.
-(Why do this? The metaweb is more predictable than local interactions.)
-We do this using network embedding (\textbf{cite?}). Network embedding
-takes each node in the network (either a bumblebee or a wildflower) and
-represents it in a latent \(n\) dimensional space. Combination of
-running models on Temporal niche (T), Phylogenetic niche (P),
-Environmental niche (E), and relative abundance in community (RA).
+metaweb prediction on co-occurrence probability. First, we build a model
+to predict the metaweb---the network of \emph{all} interactions,
+aggregated across all times and spatial locations---of \emph{Bombus} and
+wildflower species across Colorado. (Why do this? The metaweb is more
+predictable than local interactions.) We do this using network embedding
+(\textbf{cite?}). Network embedding takes each node in the network
+(either a bumblebee or a wildflower) and represents it in a latent \(n\)
+dimensional space. Combination of running models on Temporal niche (T),
+Phylogenetic niche (P), Environmental niche (E), and relative abundance
+in community (RA).
 
 Second, we then use this metaweb to predict the structure of networks at
 specific locations and times of year (Gravel \emph{et al.} 2019).
-
 Finally we suggest a map of sampling priority, which suggests the
 locations to sample that will best improve our understanding of the
 Colorado \emph{Bombus} pollination metaweb.
 
+Why is this good for science, what does this contribute to our
+understanding of plant-pollinator ints, networks, Bombus, predictive
+models, etc., and how can these results be useful.
+
 \hypertarget{data}{%
 \section{Data}\label{data}}
 
-We use three separate datasets to estimate the Colorado \emph{Bombus}
-metaweb.
+We use three separate field datasets to estimate the Colorado
+\emph{Bombus} metaweb.
 
 \hypertarget{methods}{%
 \section{Methods}\label{methods}}
@@ -326,8 +332,11 @@ features}\label{environmental-niche-features}}
 \subsection{Metaweb Model Fitting and
 Validation}\label{metaweb-model-fitting-and-validation}}
 
-\textbf{\emph{Figure 2: Model Fit Figure}}
+\begin{figure}
+\centering
 \includegraphics{./figures/PR_ROC.png}
+\caption{todo}
+\end{figure}
 
 \hypertarget{spatiotemporally-explicit-networks}{%
 \section{Spatiotemporally Explicit
@@ -336,7 +345,7 @@ Networks}\label{spatiotemporally-explicit-networks}}
 Now that we have a metaweb\ldots..
 
 \textbf{\emph{Figure 3: Maps over time figure and Prob(Connectance)
-vs.~Month figure }}
+vs.~Month figure}}
 
 \hypertarget{sampling-prioiritization}{%
 \section{Sampling Prioiritization}\label{sampling-prioiritization}}
@@ -359,6 +368,11 @@ Gravel, D., Baiser, B., Dunne, J.A., Kopelke, J.-P., Martinez, N.D.,
 Nyman, T., \emph{et al.} (2019). Bringing Elton and Grinnell together: A
 quantitative framework to represent the biogeography of ecological
 interaction networks. \emph{Ecography}, 42, 401--415.
+
+\leavevmode\hypertarget{ref-Poisot2015SpeWhy}{}%
+Poisot, T., Stouffer, D.B. \& Gravel, D. (2015). Beyond species: Why
+ecological interaction networks vary through space and time.
+\emph{Oikos}, 124, 243--251.
 
 \end{CSLReferences}
 

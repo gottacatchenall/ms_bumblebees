@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Forecasting the spatio-temporal uncoupling of bumblebee-flower interaction networks</title>
+    <title>Building a better metaweb: predicting spatially and temporally explicit alpine plant-pollinator interaction networks</title>
     <script src="https://hypothes.is/embed.js" async></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
     integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
@@ -171,7 +171,7 @@
 <body>
     <header>
         <div class="container">
-            <div class="header--title">Forecasting the spatio-temporal uncoupling of bumblebee-flower interaction networks</div>
+            <div class="header--title">Building a better metaweb: predicting spatially and temporally explicit alpine plant-pollinator interaction networks</div>
             <div class="header--authors">
                 <span class="header--author">
                 <a href="https://orcid.org/0000-0002-6506-6487" target="_blank">
@@ -190,9 +190,7 @@
                 <a href="https://orcid.org/0000-0001-9051-0597" target="_blank">
                     Francis Banville
                 </a>
-                <sup class="affilcode">5</sup>
-                <sup class="affilcode">6</sup>
-                <sup class="affilcode">2</sup>
+                <sup class="affilcode">3</sup>
                 </span><span class="header--author">
                 <a href="https://orcid.org/0000-0002-2151-6693" target="_blank">
                     Dominique Caron
@@ -212,12 +210,6 @@
                 <sup class="affilcode">5</sup>
                 <sup class="affilcode">2</sup>
                 </span><span class="header--author">
-                <a href="https://orcid.org/0000-0001-6075-8081" target="_blank">
-                    Andrew Gonzalez
-                </a>
-                <sup class="affilcode">1</sup>
-                <sup class="affilcode">2</sup>
-                </span><span class="header--author">
                 <a href="https://orcid.org/0000-0002-4498-7076" target="_blank">
                     Dominique Gravel
                 </a>
@@ -230,20 +222,26 @@
                 <sup class="affilcode">1</sup>
                 <sup class="affilcode">2</sup>
                 </span><span class="header--author">
-                <a href="https://orcid.org/0000-0002-0735-5184" target="_blank">
-                    Timothée Poisot
-                </a>
-                <sup class="affilcode">5</sup>
-                <sup class="affilcode">2</sup>
-                </span><span class="header--author">
                 <a href="https://orcid.org/0000-0001-6067-1349" target="_blank">
                     Tanya Strydom
                 </a>
                 <sup class="affilcode">5</sup>
                 <sup class="affilcode">2</sup>
                 </span><span class="header--author">
+                <a href="https://orcid.org/0000-0002-0735-5184" target="_blank">
+                    Timothée Poisot
+                </a>
+                <sup class="affilcode">5</sup>
+                <sup class="affilcode">2</sup>
+                </span><span class="header--author">
                 Julian Resasco
                 <sup class="affilcode">7</sup>
+                </span><span class="header--author">
+                <a href="https://orcid.org/0000-0001-6075-8081" target="_blank">
+                    Andrew Gonzalez
+                </a>
+                <sup class="affilcode">1</sup>
+                <sup class="affilcode">2</sup>
                 </span>
             </div>
         </div>
@@ -272,14 +270,12 @@
             <h2 id="abstract">Abstract</h2>
             <p>Using a data set of [DESCRIBE EACH DATASET IN A NICE WAY], we predict a spatiotemporally explicit metaweb of interactions between bumblebees (<em>Bombus</em>) and wildflowers (within <em>find clade</em>). We integrate this data with crowdsourced occurrence data and climate data to [best paint the picture of the Colorado bumblebee-plant metaweb]. Using temporal climate data, we forecast how the spatiotemporal overlap of interacting species will change under proposed climate scenarios. We use this to estimate what interactions between bees and plants need the most attention to prevent the spatiotemporal decoupling of an interactions from threatening ecosystem functioning or the persistence of a species.</p>
             <h1 id="introduction">Introduction</h1>
-            <p>Species interactions are important. It is ultimately interactions between individuals of different species that drive the structure, dynamics, and persistence of ecosystems, and the abundance and diversity of the species within them. Plant-pollinator interactions specifically drive the function and persistence of “architecture of biodiversity” <span class="citation" data-cites="Bascompte2007PlaMut">(Bascompte &amp; Jordano 2007)</span>. However, we are far from a robust understanding of plant-pollinator networks is.</p>
-            <p>In this paper, we combine several datasets, each spanning several years, to produce spatially and temporally explicit predictions of <em>Bombus</em> plant-pollinator interactions across the state of Colorado.</p>
-            <p>We do this in two parts: (1) metaweb prediction and (2) conditioning our metaweb prediction on co-occurrence probability.</p>
-            <p>First, we build a model to predict the metaweb—the network of <em>all</em> interactions, aggregated across all times and spatial locations—of <em>Bombus</em> and wildflower species across Colorado. (Why do this? The metaweb is more predictable than local interactions.) We do this using network embedding <span class="citation" data-cites="cite">(<strong>cite?</strong>)</span>. Network embedding takes each node in the network (either a bumblebee or a wildflower) and represents it in a latent <span class="math inline"><em>n</em></span> dimensional space. Combination of running models on Temporal niche (T), Phylogenetic niche (P), Environmental niche (E), and relative abundance in community (RA).</p>
-            <p>Second, we then use this metaweb to predict the structure of networks at specific locations and times of year <span class="citation" data-cites="Gravel2019BriElt">(Gravel <em>et al.</em> 2019)</span>.</p>
-            <p>Finally we suggest a map of sampling priority, which suggests the locations to sample that will best improve our understanding of the Colorado <em>Bombus</em> pollination metaweb.</p>
+            <p>Species interactions are important. It is ultimately interactions between individuals of different species that drive the structure, dynamics, and persistence of ecosystems, and the abundance and diversity of the species within them. Plant-pollinator interactions specifically drive the function and persistence of “architecture of biodiversity” <span class="citation" data-cites="Bascompte2007PlaMut">(Bascompte &amp; Jordano 2007)</span>. However, we are far from a robust understanding of plant-pollinator networks. This is because sampling interactions is costly. Interactions vary in space and time <span class="citation" data-cites="Poisot2015SpeWhy">(Poisot <em>et al.</em> 2015)</span>—particularlly relevent in this system [Paul phenology cite]. This is why there is interest in using models to predict interactions from sparse data <span class="citation" data-cites="Strydom2021">(<strong>Strydom2021?</strong>)</span>. In this paper, we combine several datasets, each spanning several years, to produce spatially and temporally explicit predictions of the bumblebee (genus <em>Bombus</em>) and wildflower pollination network across the state of Colorado.</p>
+            <p>We do this in two parts: (1) metaweb prediction and (2) conditioning our metaweb prediction on co-occurrence probability. First, we build a model to predict the metaweb—the network of <em>all</em> interactions, aggregated across all times and spatial locations—of <em>Bombus</em> and wildflower species across Colorado. (Why do this? The metaweb is more predictable than local interactions.) We do this using network embedding <span class="citation" data-cites="cite">(<strong>cite?</strong>)</span>. Network embedding takes each node in the network (either a bumblebee or a wildflower) and represents it in a latent <span class="math inline"><em>n</em></span> dimensional space. Combination of running models on Temporal niche (T), Phylogenetic niche (P), Environmental niche (E), and relative abundance in community (RA).</p>
+            <p>Second, we then use this metaweb to predict the structure of networks at specific locations and times of year <span class="citation" data-cites="Gravel2019BriElt">(Gravel <em>et al.</em> 2019)</span>. Finally we suggest a map of sampling priority, which suggests the locations to sample that will best improve our understanding of the Colorado <em>Bombus</em> pollination metaweb.</p>
+            <p>Why is this good for science, what does this contribute to our understanding of plant-pollinator ints, networks, Bombus, predictive models, etc., and how can these results be useful.</p>
             <h1 id="data">Data</h1>
-            <p>We use three separate datasets to estimate the Colorado <em>Bombus</em> metaweb.</p>
+            <p>We use three separate field datasets to estimate the Colorado <em>Bombus</em> metaweb.</p>
             <h1 id="methods">Methods</h1>
             <p><strong><em>Concept Fig</em></strong></p>
             <h1 id="metaweb-model">Metaweb Model</h1>
@@ -290,10 +286,12 @@
             <h3 id="environmental-niche-features">Environmental niche features</h3>
             <h3 id="temporal-niche-features">Temporal niche features</h3>
             <h2 id="metaweb-model-fitting-and-validation">Metaweb Model Fitting and Validation</h2>
-            <p><strong><em>Figure 2: Model Fit Figure</em></strong> <img src="./figures/PR_ROC.png" alt="todo" /></p>
+            <figure>
+            <img src="./figures/PR_ROC.png" alt="todo" /><figcaption aria-hidden="true">todo</figcaption>
+            </figure>
             <h1 id="spatiotemporally-explicit-networks">Spatiotemporally Explicit Networks</h1>
             <p>Now that we have a metaweb…..</p>
-            <p><strong><em>Figure 3: Maps over time figure and Prob(Connectance) vs. Month figure </em></strong></p>
+            <p><strong><em>Figure 3: Maps over time figure and Prob(Connectance) vs. Month figure</em></strong></p>
             <h1 id="sampling-prioiritization">Sampling Prioiritization</h1>
             <p><strong><em>Figure 4: Uncertainty and sampling priority map</em></strong></p>
             <h1 class="unnumbered" id="discussion">Discussion</h1>
@@ -303,6 +301,9 @@
             </div>
             <div id="ref-Gravel2019BriElt" class="csl-entry" role="doc-biblioentry">
             Gravel, D., Baiser, B., Dunne, J.A., Kopelke, J.-P., Martinez, N.D., Nyman, T., <em>et al.</em> (2019). Bringing Elton and Grinnell together: A quantitative framework to represent the biogeography of ecological interaction networks. <em>Ecography</em>, 42, 401–415.
+            </div>
+            <div id="ref-Poisot2015SpeWhy" class="csl-entry" role="doc-biblioentry">
+            Poisot, T., Stouffer, D.B. &amp; Gravel, D. (2015). Beyond species: Why ecological interaction networks vary through space and time. <em>Oikos</em>, 124, 243–251.
             </div>
             </div>
         </article>
