@@ -1,5 +1,12 @@
 \begin{figure}
 \centering
+\includegraphics{./figures/concept.png}
+\caption{todo}
+\end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
 \includegraphics{./figures/PR_ROC.png}
 \caption{todo}
 \end{figure}
