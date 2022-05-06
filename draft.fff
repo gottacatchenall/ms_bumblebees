@@ -6,7 +6,9 @@
 \efloatseparator
  
 \begin{figure}
+\hypertarget{fig:prroc}{%
 \centering
 \includegraphics{./figures/PR_ROC.png}
-\caption{todo}
+\caption{todo}\label{fig:prroc}
+}
 \end{figure}

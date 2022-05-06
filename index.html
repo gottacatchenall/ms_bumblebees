@@ -281,15 +281,24 @@
             <img src="./figures/concept.png" alt="todo" /><figcaption aria-hidden="true">todo</figcaption>
             </figure>
             <h1 id="metaweb-model">Metaweb Model</h1>
-            <h2 id="phylogeny-construction">Phylogeny Construction</h2>
             <h2 id="feature-embedding">Feature Embedding</h2>
             <h3 id="relative-abundance">Relative Abundance</h3>
             <h3 id="phylogenetic-features">Phylogenetic features</h3>
+            <h4 id="phylogeny-construction">Phylogeny Construction</h4>
+            <p>We construct phylogenies for both <em>Bombus</em> and wildflower species using barcode markers, mitochondrial COI and chloroplast rbcL, respectively. These sequences were obtained from NCBI GenBank for all species. For species for which no sequence was available (only a handful of plants), their was substituted with a barcode from a member of the same genus. Justify why this is fine here.</p>
+            <p>These sequences were aligned using ClustalOmega v???, and then a posterior distribution of phylogenies and consensus tree was obtained via MrBayes v??, using XX substition model with gamma-distributed rates. Run until convergence, which here we define as the standard-deviation of splits falling below 0.1.</p>
+            <h4 id="creating-an-embedding-from-phylogenies">Creating an embedding from phylogenies</h4>
+            <p>We simulate traits.</p>
             <h3 id="environmental-niche-features">Environmental niche features</h3>
+            <p>We take the 19 BioClim layers from CHELSA (cite; 1km resolution) and a map of elevation and PCA them. A resulting 4 layers cover 99.5% of the variance. We use species occurrence data from GBIF, and consider each occurrence record as a point in environment space. Then we fit a multivariate normal distribution to these points in environmental space.</p>
             <h3 id="temporal-niche-features">Temporal niche features</h3>
+            <p>We take the mean and variance of the distribution of number of observations per week of year in the interaction field data.</p>
             <h2 id="metaweb-model-fitting-and-validation">Metaweb Model Fitting and Validation</h2>
+            <p>We fit a bunch of models using MLJ.jl.</p>
+            <p>Some of them are bagged, some are not bagged.</p>
+            <p>AUC-ROC and AUC-PR values below in fig. 1</p>
             <figure>
-            <img src="./figures/PR_ROC.png" alt="todo" /><figcaption aria-hidden="true">todo</figcaption>
+            <img src="./figures/PR_ROC.png" id="fig:prroc" alt="Figure 1: todo" /><figcaption aria-hidden="true">Figure 1: todo</figcaption>
             </figure>
             <h1 id="spatiotemporally-explicit-networks">Spatiotemporally Explicit Networks</h1>
             <p>Now that we have a metaweb…..</p>

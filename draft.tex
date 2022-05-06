@@ -312,9 +312,6 @@ We use three separate field datasets to estimate the Colorado
 \hypertarget{metaweb-model}{%
 \section{Metaweb Model}\label{metaweb-model}}
 
-\hypertarget{phylogeny-construction}{%
-\subsection{Phylogeny Construction}\label{phylogeny-construction}}
-
 \hypertarget{feature-embedding}{%
 \subsection{Feature Embedding}\label{feature-embedding}}
 
@@ -324,21 +321,60 @@ We use three separate field datasets to estimate the Colorado
 \hypertarget{phylogenetic-features}{%
 \subsubsection{Phylogenetic features}\label{phylogenetic-features}}
 
+\hypertarget{phylogeny-construction}{%
+\paragraph{Phylogeny Construction}\label{phylogeny-construction}}
+
+We construct phylogenies for both \emph{Bombus} and wildflower species
+using barcode markers, mitochondrial COI and chloroplast rbcL,
+respectively. These sequences were obtained from NCBI GenBank for all
+species. For species for which no sequence was available (only a handful
+of plants), their was substituted with a barcode from a member of the
+same genus. Justify why this is fine here.
+
+These sequences were aligned using ClustalOmega v???, and then a
+posterior distribution of phylogenies and consensus tree was obtained
+via MrBayes v??, using XX substition model with gamma-distributed rates.
+Run until convergence, which here we define as the standard-deviation of
+splits falling below 0.1.
+
+\hypertarget{creating-an-embedding-from-phylogenies}{%
+\paragraph{Creating an embedding from
+phylogenies}\label{creating-an-embedding-from-phylogenies}}
+
+We simulate traits.
+
 \hypertarget{environmental-niche-features}{%
 \subsubsection{Environmental niche
 features}\label{environmental-niche-features}}
 
+We take the 19 BioClim layers from CHELSA (cite; 1km resolution) and a
+map of elevation and PCA them. A resulting 4 layers cover 99.5\% of the
+variance. We use species occurrence data from GBIF, and consider each
+occurrence record as a point in environment space. Then we fit a
+multivariate normal distribution to these points in environmental space.
+
 \hypertarget{temporal-niche-features}{%
 \subsubsection{Temporal niche features}\label{temporal-niche-features}}
+
+We take the mean and variance of the distribution of number of
+observations per week of year in the interaction field data.
 
 \hypertarget{metaweb-model-fitting-and-validation}{%
 \subsection{Metaweb Model Fitting and
 Validation}\label{metaweb-model-fitting-and-validation}}
 
+We fit a bunch of models using MLJ.jl.
+
+Some of them are bagged, some are not bagged.
+
+AUC-ROC and AUC-PR values below in fig.~\ref{fig:prroc}
+
 \begin{figure}
+\hypertarget{fig:prroc}{%
 \centering
 \includegraphics{./figures/PR_ROC.png}
-\caption{todo}
+\caption{todo}\label{fig:prroc}
+}
 \end{figure}
 
 \hypertarget{spatiotemporally-explicit-networks}{%
