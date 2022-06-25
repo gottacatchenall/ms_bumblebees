@@ -14,21 +14,20 @@ of a species.
 
 # Introduction
 
-Species interactions are important. It is ultimately interactions
-between individuals of different species that drive the structure,
-dynamics, and persistence of ecosystems, and the abundance and
-diversity of the species within them. Plant-pollinator interactions
-specifically drive the function and persistence of "architecture of
-biodiversity" [@Bascompte2007PlaMut]. However, we are far from a
-robust understanding of plant-pollinator networks.
-This is because sampling interactions is costly. Interactions vary in
-space and time [@Poisot2015SpeWhy]---particularlly relevent in this
-system [@CaraDonna2014ShiFlo]. This is why there is interest in using
-models to predict interactions from sparse data [@Strydom2021].
-In this paper, we combine several datasets, each spanning several
-years, to produce spatially and temporally explicit predictions of the
-bumblebee (genus _Bombus_) and wildflower pollination network across
-the state of Colorado.
+Ecosystems emerge from sets of interactions between pairs of species.
+these interactions produce the dynamics and persistence of ecosystems,
+and the abundance and diversity of the species within them.
+Plant-pollinator interactions specifically drive the function and
+persistence of "architecture of biodiversity" [@Bascompte2007PlaMut].
+However, we are far from a robust understanding of plant-pollinator
+networks. This is because sampling interactions is costly.
+Interactions vary in space and time [@Poisot2015SpeWhy]---particularly
+relevant in this system [@CaraDonna2014ShiFlo]. This is why there is
+interest in using models to predict interactions from sparse data
+[@Strydom2021]. In this paper, we combine several datasets, each
+spanning several years, to produce spatially and temporally explicit
+predictions of the bumblebee (genus _Bombus_) and wildflower
+pollination network across the state of Colorado.
 
 We do this in two parts: (1) metaweb prediction and (2) conditioning
 our metaweb prediction on co-occurrence probability.
@@ -52,14 +51,11 @@ Why is this good for science, what does this contribute to our
 understanding of plant-pollinator ints, networks, Bombus, predictive
 models, etc.,  and how can these results be useful.
 
-# Data
+# Data and methodology
 
 We use three separate field datasets to estimate the Colorado _Bombus_
 metaweb.
 
-
-
-# Methods
 
 ![todo](./figures/concept.png)
 
@@ -111,9 +107,11 @@ This embedding is the simplest.
 
 ## Metaweb Model Fitting and Validation
 
-We fit a bunch of models using MLJ.jl.
+We fit a bunch of models using MLJ.jl. Some of them are bagged, some are not bagged.
 
-Some of them are bagged, some are not bagged.
+We train each model on each possible combination of features.
+
+
 
 AUC-ROC and AUC-PR values below in @fig:prroc
 
@@ -124,6 +122,7 @@ ROC, but not for PR. This illustrates an inherent trade-off between
 models being as "right" as possible versus a model being useful for
 discovering false-negatives.
 
+***Figure 3: Embedded networks pre and post prediction a la that virus paper***
 
 # Predicting networks in space and time
 
@@ -133,9 +132,23 @@ interaction at particular place and time into probability of
 interaction multiplied by probability of co-occurrence via properties
 of conditional probability [@Gravel2019BriElt].
 
+## Spatial prediction
+
+Boosted regression tree using EvoTrees.jl, using data from GBIF.
+
+
 How do we define? $P(i \leftrightarrow j)$ Is it $P(A_{ij})P(O_{ij})$ or $P(A_{ij})P(O_i)P(O_j)$
 
-***Figure 3: Maps over time figure and Prob(Connectance) vs. Month figure***
+
+## Temporal prediction
+
+
+
+
+![todo](./figures/ssdms.png)
+
+
+***Figure 5: Maps over time figure and Prob(Connectance) vs. Month figure***
 
 
 # Prioritizing spatial sampling of pollinator interactions
