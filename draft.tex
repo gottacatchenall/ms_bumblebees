@@ -256,21 +256,21 @@ the persistence of a species.
 \hypertarget{introduction}{%
 \section{Introduction}\label{introduction}}
 
-Species interactions are important. It is ultimately interactions
-between individuals of different species that drive the structure,
-dynamics, and persistence of ecosystems, and the abundance and diversity
-of the species within them. Plant-pollinator interactions specifically
-drive the function and persistence of ``architecture of biodiversity''
-(Bascompte \& Jordano 2007). However, we are far from a robust
-understanding of plant-pollinator networks. This is because sampling
-interactions is costly. Interactions vary in space and time (Poisot
-\emph{et al.} 2015)---particularlly relevent in this system (CaraDonna
-\emph{et al.} 2014). This is why there is interest in using models to
-predict interactions from sparse data (\textbf{Strydom2021?}). In this
-paper, we combine several datasets, each spanning several years, to
-produce spatially and temporally explicit predictions of the bumblebee
-(genus \emph{Bombus}) and wildflower pollination network across the
-state of Colorado.
+Ecosystems emerge from sets of interactions between pairs of species.
+these interactions produce the dynamics and persistence of ecosystems,
+and the abundance and diversity of the species within them.
+Plant-pollinator interactions specifically drive the function and
+persistence of ``architecture of biodiversity'' (Bascompte \& Jordano
+2007). However, we are far from a robust understanding of
+plant-pollinator networks. This is because sampling interactions is
+costly. Interactions vary in space and time (Poisot \emph{et al.}
+2015)---particularly relevant in this system (CaraDonna \emph{et al.}
+2014). This is why there is interest in using models to predict
+interactions from sparse data (\textbf{Strydom2021?}). In this paper, we
+combine several datasets, each spanning several years, to produce
+spatially and temporally explicit predictions of the bumblebee (genus
+\emph{Bombus}) and wildflower pollination network across the state of
+Colorado.
 
 We do this in two parts: (1) metaweb prediction and (2) conditioning our
 metaweb prediction on co-occurrence probability. First, we build a model
@@ -294,14 +294,11 @@ Why is this good for science, what does this contribute to our
 understanding of plant-pollinator ints, networks, Bombus, predictive
 models, etc., and how can these results be useful.
 
-\hypertarget{data}{%
-\section{Data}\label{data}}
+\hypertarget{data-and-methodology}{%
+\section{Data and methodology}\label{data-and-methodology}}
 
 We use three separate field datasets to estimate the Colorado
 \emph{Bombus} metaweb.
-
-\hypertarget{methods}{%
-\section{Methods}\label{methods}}
 
 \begin{figure}
 \centering
@@ -367,9 +364,10 @@ This embedding is the simplest.
 \subsection{Metaweb Model Fitting and
 Validation}\label{metaweb-model-fitting-and-validation}}
 
-We fit a bunch of models using MLJ.jl.
+We fit a bunch of models using MLJ.jl. Some of them are bagged, some are
+not bagged.
 
-Some of them are bagged, some are not bagged.
+We train each model on each possible combination of features.
 
 AUC-ROC and AUC-PR values below in fig.~\ref{fig:prroc}
 
@@ -386,6 +384,9 @@ ROC, but not for PR. This illustrates an inherent trade-off between
 models being as ``right'' as possible versus a model being useful for
 discovering false-negatives.
 
+\textbf{\emph{Figure 3: Embedded networks pre and post prediction a la
+that virus paper}}
+
 \hypertarget{predicting-networks-in-space-and-time}{%
 \section{Predicting networks in space and
 time}\label{predicting-networks-in-space-and-time}}
@@ -396,10 +397,24 @@ interaction at particular place and time into probability of interaction
 multiplied by probability of co-occurrence via properties of conditional
 probability (Gravel \emph{et al.} 2019).
 
+\hypertarget{spatial-prediction}{%
+\subsection{Spatial prediction}\label{spatial-prediction}}
+
+Boosted regression tree using EvoTrees.jl, using data from GBIF.
+
 How do we define? \(P(i \leftrightarrow j)\) Is it
 \(P(A_{ij})P(O_{ij})\) or \(P(A_{ij})P(O_i)P(O_j)\)
 
-\textbf{\emph{Figure 3: Maps over time figure and Prob(Connectance)
+\hypertarget{temporal-prediction}{%
+\subsection{Temporal prediction}\label{temporal-prediction}}
+
+\begin{figure}
+\centering
+\includegraphics{./figures/ssdms.png}
+\caption{todo}
+\end{figure}
+
+\textbf{\emph{Figure 5: Maps over time figure and Prob(Connectance)
 vs.~Month figure}}
 
 \hypertarget{prioritizing-spatial-sampling-of-pollinator-interactions}{%

@@ -12,3 +12,10 @@
 \caption{todo}\label{fig:prroc}
 }
 \end{figure}
+\efloatseparator
+ 
+\begin{figure}
+\centering
+\includegraphics{./figures/ssdms.png}
+\caption{todo}
+\end{figure}

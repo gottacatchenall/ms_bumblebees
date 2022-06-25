@@ -270,13 +270,12 @@
             <h2 id="abstract">Abstract</h2>
             <p>Using a data set of [DESCRIBE EACH DATASET IN A NICE WAY], we predict a spatiotemporally explicit metaweb of interactions between bumblebees (<em>Bombus</em>) and wildflowers (within <em>find clade</em>). We integrate this data with crowdsourced occurrence data and climate data to [best paint the picture of the Colorado bumblebee-plant metaweb]. Using temporal climate data, we forecast how the spatiotemporal overlap of interacting species will change under proposed climate scenarios. We use this to estimate what interactions between bees and plants need the most attention to prevent the spatiotemporal decoupling of an interactions from threatening ecosystem functioning or the persistence of a species.</p>
             <h1 id="introduction">Introduction</h1>
-            <p>Species interactions are important. It is ultimately interactions between individuals of different species that drive the structure, dynamics, and persistence of ecosystems, and the abundance and diversity of the species within them. Plant-pollinator interactions specifically drive the function and persistence of “architecture of biodiversity” <span class="citation" data-cites="Bascompte2007PlaMut">(Bascompte &amp; Jordano 2007)</span>. However, we are far from a robust understanding of plant-pollinator networks. This is because sampling interactions is costly. Interactions vary in space and time <span class="citation" data-cites="Poisot2015SpeWhy">(Poisot <em>et al.</em> 2015)</span>—particularlly relevent in this system <span class="citation" data-cites="CaraDonna2014ShiFlo">(CaraDonna <em>et al.</em> 2014)</span>. This is why there is interest in using models to predict interactions from sparse data <span class="citation" data-cites="Strydom2021">(<strong>Strydom2021?</strong>)</span>. In this paper, we combine several datasets, each spanning several years, to produce spatially and temporally explicit predictions of the bumblebee (genus <em>Bombus</em>) and wildflower pollination network across the state of Colorado.</p>
+            <p>Ecosystems emerge from sets of interactions between pairs of species. these interactions produce the dynamics and persistence of ecosystems, and the abundance and diversity of the species within them. Plant-pollinator interactions specifically drive the function and persistence of “architecture of biodiversity” <span class="citation" data-cites="Bascompte2007PlaMut">(Bascompte &amp; Jordano 2007)</span>. However, we are far from a robust understanding of plant-pollinator networks. This is because sampling interactions is costly. Interactions vary in space and time <span class="citation" data-cites="Poisot2015SpeWhy">(Poisot <em>et al.</em> 2015)</span>—particularly relevant in this system <span class="citation" data-cites="CaraDonna2014ShiFlo">(CaraDonna <em>et al.</em> 2014)</span>. This is why there is interest in using models to predict interactions from sparse data <span class="citation" data-cites="Strydom2021">(<strong>Strydom2021?</strong>)</span>. In this paper, we combine several datasets, each spanning several years, to produce spatially and temporally explicit predictions of the bumblebee (genus <em>Bombus</em>) and wildflower pollination network across the state of Colorado.</p>
             <p>We do this in two parts: (1) metaweb prediction and (2) conditioning our metaweb prediction on co-occurrence probability. First, we build a model to predict the metaweb—the network of <em>all</em> interactions, aggregated across all times and spatial locations—of <em>Bombus</em> and wildflower species across Colorado. (Why do this? The metaweb is more predictable than local interactions.) We do this using network embedding <span class="citation" data-cites="cite">(<strong>cite?</strong>)</span>. Network embedding takes each node in the network (either a bumblebee or a wildflower) and represents it in a latent <span class="math inline"><em>n</em></span> dimensional space. Combination of running models on Temporal niche (T), Phylogenetic niche (P), Environmental niche (E), and relative abundance in community (RA).</p>
             <p>Second, we then use this metaweb to predict the structure of networks at specific locations and times of year <span class="citation" data-cites="Gravel2019BriElt">(Gravel <em>et al.</em> 2019)</span>. Finally we suggest a map of sampling priority, which suggests the locations to sample that will best improve our understanding of the Colorado <em>Bombus</em> pollination metaweb.</p>
             <p>Why is this good for science, what does this contribute to our understanding of plant-pollinator ints, networks, Bombus, predictive models, etc., and how can these results be useful.</p>
-            <h1 id="data">Data</h1>
+            <h1 id="data-and-methodology">Data and methodology</h1>
             <p>We use three separate field datasets to estimate the Colorado <em>Bombus</em> metaweb.</p>
-            <h1 id="methods">Methods</h1>
             <figure>
             <img src="./figures/concept.png" alt="todo" /><figcaption aria-hidden="true">todo</figcaption>
             </figure>
@@ -295,17 +294,24 @@
             <h3 id="relative-abundance">Relative Abundance</h3>
             <p>This embedding is the simplest.</p>
             <h2 id="metaweb-model-fitting-and-validation">Metaweb Model Fitting and Validation</h2>
-            <p>We fit a bunch of models using MLJ.jl.</p>
-            <p>Some of them are bagged, some are not bagged.</p>
+            <p>We fit a bunch of models using MLJ.jl. Some of them are bagged, some are not bagged.</p>
+            <p>We train each model on each possible combination of features.</p>
             <p>AUC-ROC and AUC-PR values below in fig. 1</p>
             <figure>
             <img src="./figures/PR_ROC.png" id="fig:prroc" alt="Figure 1: todo" /><figcaption aria-hidden="true">Figure 1: todo</figcaption>
             </figure>
             <p>What does this tell us? The ensemble model is regularly the best for ROC, but not for PR. This illustrates an inherent trade-off between models being as “right” as possible versus a model being useful for discovering false-negatives.</p>
+            <p><strong><em>Figure 3: Embedded networks pre and post prediction a la that virus paper</em></strong></p>
             <h1 id="predicting-networks-in-space-and-time">Predicting networks in space and time</h1>
             <p>Now that we have a metaweb, we can extend this to predict interactions at particular places and times by decomposing the probability of interaction at particular place and time into probability of interaction multiplied by probability of co-occurrence via properties of conditional probability <span class="citation" data-cites="Gravel2019BriElt">(Gravel <em>et al.</em> 2019)</span>.</p>
+            <h2 id="spatial-prediction">Spatial prediction</h2>
+            <p>Boosted regression tree using EvoTrees.jl, using data from GBIF.</p>
             <p>How do we define? <span class="math inline"><em>P</em>(<em>i</em> ↔︎ <em>j</em>)</span> Is it <span class="math inline"><em>P</em>(<em>A</em><sub><em>i</em><em>j</em></sub>)<em>P</em>(<em>O</em><sub><em>i</em><em>j</em></sub>)</span> or <span class="math inline"><em>P</em>(<em>A</em><sub><em>i</em><em>j</em></sub>)<em>P</em>(<em>O</em><sub><em>i</em></sub>)<em>P</em>(<em>O</em><sub><em>j</em></sub>)</span></p>
-            <p><strong><em>Figure 3: Maps over time figure and Prob(Connectance) vs. Month figure</em></strong></p>
+            <h2 id="temporal-prediction">Temporal prediction</h2>
+            <figure>
+            <img src="./figures/ssdms.png" alt="todo" /><figcaption aria-hidden="true">todo</figcaption>
+            </figure>
+            <p><strong><em>Figure 5: Maps over time figure and Prob(Connectance) vs. Month figure</em></strong></p>
             <h1 id="prioritizing-spatial-sampling-of-pollinator-interactions">Prioritizing spatial sampling of pollinator interactions</h1>
             <p>How do we improve out understanding of this pollination network, or determine if it is changing over time?</p>
             <p><strong><em>Figure 4: Uncertainty and sampling priority map</em></strong></p>
